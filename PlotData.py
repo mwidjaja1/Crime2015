@@ -1,7 +1,7 @@
 #from bokeh.models import HoverTool
 from bokeh.plotting import ColumnDataSource, figure
 
-""" plotData -------------------------------------------------------------------
+""" gridData -------------------------------------------------------------------
     Goal:   Creates 2 Bokeh plots on a map of America for raw populations and
             ratios for gun shot victims & laws.
     From:   Main Function
@@ -17,7 +17,7 @@ from bokeh.plotting import ColumnDataSource, figure
             Finally, provide a title for the (7) raw plot & (8) ratios plot
     Output: A list of the two plots.
 -----------------------------------------------------------------------------"""
-def plotData(x, y, colors1, colors2, laws, midpt, pTitle1, pTitle2):
+def gridData(x, y, colors1, colors2, laws, midpt, pTitle1, pTitle2):
     # Default Tools
     toolbar = "pan,wheel_zoom,box_zoom,reset,resize"
         
@@ -41,7 +41,40 @@ def plotData(x, y, colors1, colors2, laws, midpt, pTitle1, pTitle2):
                       size=6, alpha=0.9)
                   
     return [p1, p2]
+
+""" plotData -------------------------------------------------------------------
+    Goal:   Creates 1 Bokeh plots on a map of America for raw gun shootings
+    From:   Main Function
     
+    Input:  Each State's (1) xCoordinates, (2) yCoordinates, (3) shaded colors
+            for raw populations, & (4) shaded colors for ratios.
+            
+            If applicable, (5) a DF for each state noting the color dot that'll 
+            be placed above it (to mark law intesity) & this dot will be saved
+            on each state's midpoint based on a (6) dictionary of midpoints like
+            {state: {x:<x>, y:<y>}. Set these to None if this isn't applicable.
+            
+            Finally, provide a title for the (7) raw plot & (8) ratios plot
+    Output: A list of the two plots.
+-----------------------------------------------------------------------------"""
+def plotData(x, y, colors1, laws, midpt, pTitle1):
+    # Default Tools
+    toolbar = "pan,wheel_zoom,box_zoom,reset,resize"
+        
+    # Create figure & shades for shots vs raw population
+    p1 = figure(title=pTitle1, tools=toolbar, toolbar_location="above", \
+                plot_width=625, plot_height=400)
+    p1.patches(x, y, fill_color=colors1, line_color="#884444", line_width=2)
+    
+    # Adds shapes to symbolize a state's laws
+    if midpt:    
+        laws = laws.to_dict()
+        for state in midpt:
+            p1.circle(midpt[state]['x'], midpt[state]['y'], color=laws[state], \
+                      size=6, alpha=0.9)
+                  
+    return p1
+ 
     
 """ SetsLaws -------------------------------------------------------------------
     Goal:   Determines the color the 'Law' circle should be based on the law
