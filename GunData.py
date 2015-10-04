@@ -8,7 +8,9 @@ import pandas as pd
     
     Input:  (Not explicitly) CSV Files for 2013, 2014, & 2015 in a directory
             specifed as inDir below. 
-    Output: A dict with {stateSymbol: <sum of all people shot & injured>} 
+    Output: Two dicts where one counts how many people were shot/injured per
+            state as {stateSymbol: <sum of all people shot & injured>} & the 
+            other counts shootings per state as {stateSymbol: <sum of attacks>}
 -----------------------------------------------------------------------------"""
 def loadGun():
     # Set Input Paths & Dataframe
@@ -37,7 +39,10 @@ def loadGun():
     sumStateDict = sumStateDf.to_dict()
     sumStateDict = sumStateDict['All']
 
-    return sumStateDict
+    # Creates second dictioanry for how many shootings were done per state
+    allStateDict = shooterDf.Location.value_counts().to_dict()
+
+    return sumStateDict, allStateDict
 
 """ loadPop --------------------------------------------------------------------
     Goal:   Loads the CSV Files which contains 2014 predicted population per
