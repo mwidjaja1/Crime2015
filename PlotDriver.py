@@ -1,15 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
+""" PlotDriver ----------------------------------------------------------------
+    Goal: Driver script to plot the data
+----------------------------------------------------------------------------"""
 
 # Needed on first run: from bokeh import sampledata; sampledata.download()
 
 # Imports Bokeh Libraries
 from bokeh.sampledata import us_states, us_counties, unemployment
 from bokeh.plotting import figure, show, output_file
+import GunData as gd
 
 # Download State & County Data
 us_states = us_states.data.copy()
