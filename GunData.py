@@ -2,12 +2,14 @@ import glob
 import pandas as pd
 
 """ loadGun -------------------------------------------------------------------
-    Goal: Loads the CSV Files to get Mass Shooting data
+    Goal:   Loads the CSV Files to get how many people were shot or injured
+            per state.
     
-    Input:  CSV Files for 2013, 2014, and 2015 in a directory
-    Output: A dictionary with {state: Shootings} 
+    Input:  (Not explicitly) CSV Files for 2013, 2014, & 2015 in a directory
+            specifed as inDir below. 
+    Output: A dictionary with {state: <sum of all people shot & injured>} 
 ----------------------------------------------------------------------------"""
-def loadGun(inPath):
+def loadGun():
     # Set Input Paths & Dataframe
     inDir = '/Users/Matthew/Github/Crime2015/Data/'
     shooterDf = pd.DataFrame()
@@ -23,11 +25,16 @@ def loadGun(inPath):
     shooterDf.replace(replaceDict, regex=True, inplace=True)
     
     # Saves State in Location Column
-    location = pd.DataFrame(shooterDf.Location.str.split(',').tolist(),columns=['City', 'State'])
+    location = pd.DataFrame(shooterDf.Location.str.split(', ').tolist(),columns=['City', 'State'])
     shooterDf['Location'] = location['State']
     
-    # Calculates Data Frame with summed up values for each state
+    # Calculates new Data Frame with summed up values for each state
     sumStateDf = shooterDf.groupby(['Location']).sum()
+    sumStateDf['All'] = sumStateDf.sum(axis=1)
+    
+    # Converts DataFrame to Dictionary
+    sumStateDict = sumStateDf.to_dict()
+    sumStateDict = sumStateDict['All']
 
-    return sumStateDf
+    return sumStateDict
 
