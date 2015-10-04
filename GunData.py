@@ -14,5 +14,5 @@ shooterDf = pd.DataFrame()
 
 
 for csvFile in glob.glob(inDir + '*.csv'):
-    csvDF = pd.read_csv(csvFile, sep=',', header=0)
+    csvDF = pd.read_csv(csvFile, sep=',', header=0)s
     shooterDf = shooterDf.append(csvDF)
