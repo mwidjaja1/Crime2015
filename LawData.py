@@ -65,3 +65,31 @@ def loadMid():
     #state_ys_mid = [midpoint[state]['y'] for state in midpoint]
     
     return midpoint
+    
+
+""" loadLaw --------------------------------------------------------------------
+    Goal:   Loads the CSV Files to get how many people were shot or injured
+            per state from http://shootingtracker.com.
+    From:   Main Function
+    
+    Input:  (Not explicitly) CSV Files current gun laws from inDir
+    Output: A Data Frame with the gun laws
+-----------------------------------------------------------------------------"""
+def loadLaw():
+    # Set Input Paths & Dataframe
+    inDir = '/Users/Matthew/Github/Crime2015/Laws/'
+    lawDF = pd.DataFrame()
+    
+    # Concats each year Dataframe into one
+    for csvFile in glob.glob(inDir + '*.csv'):
+        csvDF = pd.read_csv(csvFile, sep=',', header=0)
+        lawDF = lawDF.append(csvDF)
+        
+    # Sets index
+    lawDF = lawDF.set_index('State')
+    
+    # Converts DataFrame to Dictionary
+    #sumStateDict = sumStateDf.to_dict()
+    #sumStateDict = sumStateDict['All']
+
+    return lawDF

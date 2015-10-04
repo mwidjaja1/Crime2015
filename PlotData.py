@@ -9,15 +9,15 @@ from bokeh.plotting import ColumnDataSource, figure
     Input:  Each State's (1) xCoordinates, (2) yCoordinates, (3) shaded colors
             for raw populations, & (4) shaded colors for ratios.
             
-            If applicable, (5) a list of booleans for each state noting if the 
-            circle dot above it should be marked and this circle will be saved
+            If applicable, (5) a DF for each state noting the color dot that'll 
+            be placed above it (to mark law intesity) & this dot will be saved
             on each state's midpoint based on a (6) dictionary of midpoints like
             {state: {x:<x>, y:<y>}. Set these to None if this isn't applicable.
             
             Finally, provide a title for the (7) raw plot & (8) ratios plot
     Output: A list of the two plots.
 -----------------------------------------------------------------------------"""
-def plotData(x, y, colors1, colors2, laws1, midpt, pTitle1, pTitle2):
+def plotData(x, y, colors1, colors2, laws, midpt, pTitle1, pTitle2):
     # Default Tools
     toolbar = "pan,wheel_zoom,box_zoom,reset,resize"
         
@@ -33,11 +33,12 @@ def plotData(x, y, colors1, colors2, laws1, midpt, pTitle1, pTitle2):
     
     # Adds shapes to symbolize a state's laws
     if midpt:    
+        laws = laws.to_dict()
         for state in midpt:
-            p1.circle(midpt[state]['x'], midpt[state]['y'], color="navy", \
-                      size=8, alpha=0.8)
-            p2.circle(midpt[state]['x'], midpt[state]['y'], color="navy", \
-                      size=8, alpha=0.8)
+            p1.circle(midpt[state]['x'], midpt[state]['y'], color=laws[state], \
+                      size=6, alpha=0.9)
+            p2.circle(midpt[state]['x'], midpt[state]['y'], color=laws[state], \
+                      size=6, alpha=0.9)
                   
     return [p1, p2]
     

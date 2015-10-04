@@ -18,9 +18,12 @@ import PlotData as pd
 us_states = us_states.data.copy()
 us_counties = us_counties.data.copy()
 
-# Loads Gun Data and determines ratio based on population
+# Loads Gun Data
 us_shot = gd.loadGun()
 us_pop = gd.loadPop()
+
+# Loads Laws per state
+us_law = ld.loadLaw()
 
 # Deletes HI & AK and sets a list of states we won't plot
 del us_states["HI"]
@@ -42,12 +45,12 @@ state_xs_mid = [midpoint[state]['x'] for state in midpoint]
 state_ys_mid = [midpoint[state]['y'] for state in midpoint]
 
 # Sets colors where the keys are the 'Maximum' people shot in that range
-popColors = {40:'#FFE6E6', 80:'#FFB2B2', 120:'#FF8080', 160:'#FF4D4D', \
-             200:'#FF1919', 300:'#E60000', 400:'#B20000', 500:'#800000', \
-             600:'#4C0000', 700:'#1A0000', 800:'#000000'}
-ratColors = {3:'#FFE6E6', 6:'#FFB2B2', 9:'#FF8080', 12:'#FF4D4D', \
-             15:'#FF1919', 18:'#E60000', 21:'#B20000', 25:'#800000', \
-             30:'#4C0000', 100:'#1A0000', 200:'#000000'}     
+popColors = {40:'#CCE0FF', 80:'#99C2FF', 120:'#66A3FF', 160:'#3385FF', \
+             200:'#0066FF', 300:'#0052CC', 400:'#003D99', 500:'#002966', \
+             600:'#001433', 700:'#000A1A', 800:'#000000'}
+ratColors = {3:'#CCE0FF', 6:'#99C2FF', 9:'#66A3FF', 12:'#3385FF', \
+             15:'#0066FF', 18:'#0052CC', 21:'#003D99', 25:'#002966', \
+             30:'#001433', 100:'#000A1A', 200:'#000000'}     
           
 # Sets list of colors for raw population & ratios   
 statePopColors = []
@@ -84,10 +87,58 @@ for state in us_states:
 # Create output file for plot
 output_file("usShot.html", title="Number of People Shot")
 
-mainPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
-                       None, None, 'Gun Shot Victims', \
-                       'Gun Shot Victims vs. State Population')
+# Does generic plot
+standPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        None, None, '(Gun Shot) Victims', \
+                        'Gun Shot Victims vs. State Population (Ratio)')
+
+# Does carrying handgun plot
+carryHGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.CarryHG, midpoint, \
+                          'Victims vs. HG Carry Laws', \
+                          'Ratio vs. HG Carry Laws')
+
+# Does carrying longgun plot
+carryLGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.CarryLG, midpoint, \
+                          'Victims vs. LG Carry Laws', \
+                          'Ratio vs. LG Carry Laws')
+                       
+ # Does purchasing handgun plot
+purchHGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.PurchaseHG, midpoint, \
+                          'Victims vs. HG Purchase Laws', \
+                          'Ratio vs. HG Purchase Laws')
+
+# Does purchasing longgun plot
+purchLGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.PurchaseLG, midpoint, \
+                          'Victims vs. LG Purchase Laws', \
+                          'Ratio vs. LG Purchase Laws')
+
+# Does shoot first plot
+firstPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.ShootFirst, midpoint, \
+                        'Victims vs. Shoot First Laws', \
+                        'Ratio vs. Shoot First  Laws')
+
+# Does gunshow plot
+gshowPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.GunShow, midpoint, 'Victims vs. Gunshow Laws', \
+                        'Ratio vs. Gunshow Laws')
+
+# Does safety plot
+safesPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.ShootFirst, midpoint, \
+                        'Victims vs. Shoot First Laws', \
+                        'Ratio vs. Shoot First  Laws')
+
+# Does restrictions plot
+restrPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.Restrict, midpoint, 'Victims vs. Restrictions', \
+                        'Ratio vs. Restrictions')
 
 # Saves plot as a vertically stacked page
-p = gridplot([mainPlot])
+p = gridplot([standPlot, carryHGPlot, carryLGPlot, purchHGPlot, purchLGPlot, \
+              firstPlot, gshowPlot, safesPlot, restrPlot])
 save(p)
