@@ -5,6 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
+# Needed on first run: from bokeh import sampledata; sampledata.download()
 from bokeh.sampledata import us_states, us_counties, unemployment
 from bokeh.plotting import figure, show, output_file
 
@@ -44,4 +45,4 @@ p.patches(county_xs, county_ys, fill_color=county_colors, fill_alpha=0.7,
 p.patches(state_xs, state_ys, fill_alpha=0.0,
     line_color="#884444", line_width=2)
 
-show(p)
+#show(p)
