@@ -1,44 +1,56 @@
-""" PlotDriver ----------------------------------------------------------------
+""" PlotDriver -----------------------------------------------------------------
     Goal: Driver script to plot the data
-----------------------------------------------------------------------------"""
+-----------------------------------------------------------------------------"""
 
 # Needed on first run: from bokeh import sampledata; sampledata.download()
 
 # Imports Bokeh Libraries
-from bokeh.models import HoverTool
+from bokeh.io import gridplot
+from bokeh.plotting import output_file, save
 from bokeh.sampledata import us_states, us_counties
-from bokeh.plotting import ColumnDataSource, figure, save, output_file, vplot
+
+# Imports other inhouse functions
 import GunData as gd
-import numpy as np
+import LawData as ld
+import PlotData as pd
 
 # Download State & County Data
 us_states = us_states.data.copy()
 us_counties = us_counties.data.copy()
 
-# Loads Gun Data and determines ratio based on population
+# Loads Gun Data
 us_shot = gd.loadGun()
 us_pop = gd.loadPop()
+
+# Loads Laws per state
+us_law = ld.loadLaw()
 
 # Deletes HI & AK and sets a list of states we won't plot
 del us_states["HI"]
 del us_states["AK"]
 banState = ["HI", "PR", "GU", "VI", "MP", "AS", "US"]
 
+# Sorts all lists by state alphabetical order
+#us_shot = [us_shot[state] for state in sorted(us_shot)]
+#us_pop = [us_pop[state] for state in sorted(us_pop)]
+
 # Gets coordinates for each state's borders
-state_xs = [us_states[code]["lons"] for code in us_states]
-state_ys = [us_states[code]["lats"] for code in us_states]
+state_xs = [us_states[state]["lons"] for state in us_states]
+state_ys = [us_states[state]["lats"] for state in us_states]
+#state = [state for state in sorted(us_states)]
 
 # Get coordinates for each state's midpoint
-state_xs_mid = [np.mean(state) for state in state_xs]
-state_ys_mid = [np.mean(state) for state in state_ys]
+midpoint = ld.loadMid()
+state_xs_mid = [midpoint[state]['x'] for state in midpoint]
+state_ys_mid = [midpoint[state]['y'] for state in midpoint]
 
 # Sets colors where the keys are the 'Maximum' people shot in that range
-popColors = {40:'#FFE6E6', 80:'#FFB2B2', 120:'#FF8080', 160:'#FF4D4D', \
-             200:'#FF1919', 300:'#E60000', 400:'#B20000', 500:'#800000', \
-             600:'#4C0000', 700:'#1A0000', 800:'#000000'}
-ratColors = {3:'#FFE6E6', 6:'#FFB2B2', 9:'#FF8080', 12:'#FF4D4D', \
-             15:'#FF1919', 18:'#E60000', 21:'#B20000', 25:'#800000', \
-             30:'#4C0000', 100:'#1A0000', 200:'#000000'}     
+popColors = {40:'#CCE0FF', 80:'#99C2FF', 120:'#66A3FF', 160:'#3385FF', \
+             200:'#0066FF', 300:'#0052CC', 400:'#003D99', 500:'#002966', \
+             600:'#001433', 700:'#000A1A', 800:'#000000'}
+ratColors = {3:'#CCE0FF', 6:'#99C2FF', 9:'#66A3FF', 12:'#3385FF', \
+             15:'#0066FF', 18:'#0052CC', 21:'#003D99', 25:'#002966', \
+             30:'#001433', 100:'#000A1A', 200:'#000000'}     
           
 # Sets list of colors for raw population & ratios   
 statePopColors = []
@@ -70,42 +82,63 @@ for state in us_states:
             else:
                 color = ratColors[maximum]
     except KeyError:
-        statePopColors.append("white")
+        stateRatColors.append("white")
 
 # Create output file for plot
 output_file("usShot.html", title="Number of People Shot")
 
-# Add Hover Tool
-"""
-source = ColumnDataSource(
-        data=dict(
-            x=state_xs,
-            y=state_ys,
-            shot=statePopColors,
-        )
-    )
-    
-hover = HoverTool(
-        tooltips=[
-            ("Index", "$index"),
-            ("Coordinates", "($x, $y)"),
-            ("Shot", "statePopColors[$index]"),
-        ]
-    )
-"""
+# Does generic plot
+standPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        None, None, '(Gun Shot) Victims', \
+                        'Gun Shot Victims vs. State Population (Ratio)')
 
-# Create figure & plot for Raw Population
-p1 = figure(title="People Shot in 2013-15 vs. Raw Populations", toolbar_location="left", \
-            plot_width=1100, plot_height=700)
-p1.patches(state_xs, state_ys, fill_color=statePopColors, line_color="#884444", line_width=2)
-p1.circle(state_xs_mid, state_ys_mid, size=5, color="navy", alpha=0.8)
+# Does carrying handgun plot
+carryHGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.CarryHG, midpoint, \
+                          'Victims vs. HG Carry Laws', \
+                          'Ratio vs. HG Carry Laws')
 
+# Does carrying longgun plot
+carryLGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.CarryLG, midpoint, \
+                          'Victims vs. LG Carry Laws', \
+                          'Ratio vs. LG Carry Laws')
+                       
+ # Does purchasing handgun plot
+purchHGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.PurchaseHG, midpoint, \
+                          'Victims vs. HG Purchase Laws', \
+                          'Ratio vs. HG Purchase Laws')
 
-# Create figure & plot for Ratios
-p2 = figure(title="People Shot 2013-15 as a Ratio vs. State Populations", toolbar_location="left", \
-            plot_width=1100, plot_height=700)
-p2.patches(state_xs, state_ys, fill_color=stateRatColors, line_color="#884444", line_width=2)
+# Does purchasing longgun plot
+purchLGPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                          us_law.PurchaseLG, midpoint, \
+                          'Victims vs. LG Purchase Laws', \
+                          'Ratio vs. LG Purchase Laws')
+
+# Does shoot first plot
+firstPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.ShootFirst, midpoint, \
+                        'Victims vs. Shoot First Laws', \
+                        'Ratio vs. Shoot First  Laws')
+
+# Does gunshow plot
+gshowPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.GunShow, midpoint, 'Victims vs. Gunshow Laws', \
+                        'Ratio vs. Gunshow Laws')
+
+# Does safety plot
+safesPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.ShootFirst, midpoint, \
+                        'Victims vs. Shoot First Laws', \
+                        'Ratio vs. Shoot First  Laws')
+
+# Does restrictions plot
+restrPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                        us_law.Restrict, midpoint, 'Victims vs. Restrictions', \
+                        'Ratio vs. Restrictions')
 
 # Saves plot as a vertically stacked page
-p = vplot(p1, p2)
+p = gridplot([standPlot, carryHGPlot, carryLGPlot, purchHGPlot, purchLGPlot, \
+              firstPlot, gshowPlot, safesPlot, restrPlot])
 save(p)
