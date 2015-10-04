@@ -4,6 +4,7 @@ import pandas as pd
 """ loadGun --------------------------------------------------------------------
     Goal:   Loads the CSV Files to get how many people were shot or injured
             per state from http://shootingtracker.com.
+    From:   Main Function
     
     Input:  (Not explicitly) CSV Files for 2013, 2014, & 2015 in a directory
             specifed as inDir below. 
@@ -41,6 +42,7 @@ def loadGun():
 """ loadPop --------------------------------------------------------------------
     Goal:   Loads the CSV Files which contains 2014 predicted population per
             state from http://www.census.gov/popest/data/datasets.html.
+    From:   Main Function
     
     Input:  (Not explicitly) CSV File for 2014 in a directory specified below
     Output: A dict with {stateSymbol: <population>} 
@@ -79,7 +81,6 @@ def loadPop():
     populationDf.replace(replaceDict, regex=True, inplace=True) 
     
     # Gets US Population & sets index for DF based on state
-    totalPop = populationDf.iloc[0].POPESTIMATE2014
     populationDf = populationDf.set_index('NAME')
     
     # Converts DataFrame to Dictionary

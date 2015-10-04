@@ -5,12 +5,14 @@
 # Needed on first run: from bokeh import sampledata; sampledata.download()
 
 # Imports Bokeh Libraries
-from bokeh.models import HoverTool
+from bokeh.io import gridplot
+from bokeh.plotting import output_file, save
 from bokeh.sampledata import us_states, us_counties
-from bokeh.plotting import ColumnDataSource, figure, save, output_file, vplot
+
+# Imports other inhouse functions
 import GunData as gd
 import LawData as ld
-import numpy as np
+import PlotData as pd
 
 # Download State & County Data
 us_states = us_states.data.copy()
@@ -30,17 +32,14 @@ banState = ["HI", "PR", "GU", "VI", "MP", "AS", "US"]
 #us_pop = [us_pop[state] for state in sorted(us_pop)]
 
 # Gets coordinates for each state's borders
-state_xs = [us_states[state]["lons"] for state in sorted(us_states)]
-state_ys = [us_states[state]["lats"] for state in sorted(us_states)]
-state = [state for state in sorted(us_states)]
+state_xs = [us_states[state]["lons"] for state in us_states]
+state_ys = [us_states[state]["lats"] for state in us_states]
+#state = [state for state in sorted(us_states)]
 
 # Get coordinates for each state's midpoint
 midpoint = ld.loadMid()
-state_xs_mid = [midpoint[state]['x'] for state in sorted(midpoint)]
-state_ys_mid = [midpoint[state]['y'] for state in sorted(midpoint)]
-
-# Sets a list of small states -- these dots will be smaller
-state_small = ['CT', 'DE', 'RI']
+state_xs_mid = [midpoint[state]['x'] for state in midpoint]
+state_ys_mid = [midpoint[state]['y'] for state in midpoint]
 
 # Sets colors where the keys are the 'Maximum' people shot in that range
 popColors = {40:'#FFE6E6', 80:'#FFB2B2', 120:'#FF8080', 160:'#FF4D4D', \
@@ -57,7 +56,7 @@ stateRatColors = []
 # Plots Gun Shots based on Raw Population
 # Loops through each state. We note how many people were shot in each state.
 #   We compare that to the colors table & save the proper color for the state.
-for state in sorted(us_states):
+for state in us_states:
     if state in banState: continue
     try:
         # Obtains color for raw populations
@@ -80,48 +79,15 @@ for state in sorted(us_states):
             else:
                 color = ratColors[maximum]
     except KeyError:
-        statePopColors.append("white")
+        stateRatColors.append("white")
 
 # Create output file for plot
 output_file("usShot.html", title="Number of People Shot")
 
-# Add Hover Tool
-source = ColumnDataSource(
-        data=dict(
-            states = [state for state in sorted(us_shot)],
-            x = state_xs,
-            y = state_ys,
-            shot = [us_shot[state] for state in sorted(us_shot)],
-        )
-    )
-    
-hover = HoverTool(
-        tooltips=[
-            ("State", "@states"),
-            ("Coordinates", "($x, $y)"),
-            ("Shot", "@shot"),
-        ]
-    )
-
-
-# Default Tools
-toolbar = "pan,wheel_zoom,box_zoom,reset,resize,hover"
-
-# Create figure & plot for Raw Population
-p1 = figure(title="People Shot in 2013-15 vs. Raw Populations", tools=[hover], \
-            toolbar_location="left", plot_width=1100, plot_height=700)
-p1.patches(state_xs, state_ys, fill_color=statePopColors, line_color="#884444", \
-           line_width=2)
-
-p1.circle(state_xs_mid, state_ys_mid, size=8, color="navy", \
-          alpha=0.8, source=source)
-
-
-# Create figure & plot for Ratios
-p2 = figure(title="People Shot 2013-15 as a Ratio vs. State Populations", toolbar_location="left", \
-            plot_width=1100, plot_height=700)
-p2.patches(state_xs, state_ys, fill_color=stateRatColors, line_color="#884444", line_width=2)
+mainPlot = pd.plotData(state_xs, state_ys, statePopColors, stateRatColors, \
+                       None, None, 'Gun Shot Victims', \
+                       'Gun Shot Victims vs. State Population')
 
 # Saves plot as a vertically stacked page
-p = vplot(p1, p2)
+p = gridplot([mainPlot])
 save(p)

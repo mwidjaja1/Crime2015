@@ -4,6 +4,7 @@ import pandas as pd
 """ loadMid --------------------------------------------------------------------
     Goal:   Loads & sets the midpoint in each state using Bokeh's coordinates.
             We set all continental 48 states & DC here.
+    From:   Main Function
     
     Input:  Nothing. 
     Output: Dictionary with each state's midpoint
