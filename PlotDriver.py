@@ -5,9 +5,11 @@
 # Needed on first run: from bokeh import sampledata; sampledata.download()
 
 # Imports Bokeh Libraries
+from bokeh.models import HoverTool
 from bokeh.sampledata import us_states, us_counties
-from bokeh.plotting import figure, save, output_file, vplot
+from bokeh.plotting import ColumnDataSource, figure, save, output_file, vplot
 import GunData as gd
+import numpy as np
 
 # Download State & County Data
 us_states = us_states.data.copy()
@@ -22,9 +24,13 @@ del us_states["HI"]
 del us_states["AK"]
 banState = ["HI", "PR", "GU", "VI", "MP", "AS", "US"]
 
-# Gets coordinates for each state
+# Gets coordinates for each state's borders
 state_xs = [us_states[code]["lons"] for code in us_states]
 state_ys = [us_states[code]["lats"] for code in us_states]
+
+# Get coordinates for each state's midpoint
+state_xs_mid = [np.mean(state) for state in state_xs]
+state_ys_mid = [np.mean(state) for state in state_ys]
 
 # Sets colors where the keys are the 'Maximum' people shot in that range
 popColors = {40:'#FFE6E6', 80:'#FFB2B2', 120:'#FF8080', 160:'#FF4D4D', \
@@ -69,10 +75,31 @@ for state in us_states:
 # Create output file for plot
 output_file("usShot.html", title="Number of People Shot")
 
+# Add Hover Tool
+"""
+source = ColumnDataSource(
+        data=dict(
+            x=state_xs,
+            y=state_ys,
+            shot=statePopColors,
+        )
+    )
+    
+hover = HoverTool(
+        tooltips=[
+            ("Index", "$index"),
+            ("Coordinates", "($x, $y)"),
+            ("Shot", "statePopColors[$index]"),
+        ]
+    )
+"""
+
 # Create figure & plot for Raw Population
 p1 = figure(title="People Shot in 2013-15 vs. Raw Populations", toolbar_location="left", \
             plot_width=1100, plot_height=700)
 p1.patches(state_xs, state_ys, fill_color=statePopColors, line_color="#884444", line_width=2)
+p1.circle(state_xs_mid, state_ys_mid, size=5, color="navy", alpha=0.8)
+
 
 # Create figure & plot for Ratios
 p2 = figure(title="People Shot 2013-15 as a Ratio vs. State Populations", toolbar_location="left", \
