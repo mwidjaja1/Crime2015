@@ -1,6 +1,6 @@
-""" PlotDriver ----------------------------------------------------------------
+""" PlotDriver -----------------------------------------------------------------
     Goal: Driver script to plot the data
-----------------------------------------------------------------------------"""
+-----------------------------------------------------------------------------"""
 
 # Needed on first run: from bokeh import sampledata; sampledata.download()
 
@@ -9,6 +9,7 @@ from bokeh.models import HoverTool
 from bokeh.sampledata import us_states, us_counties
 from bokeh.plotting import ColumnDataSource, figure, save, output_file, vplot
 import GunData as gd
+import LawData as ld
 import numpy as np
 
 # Download State & County Data
@@ -24,13 +25,22 @@ del us_states["HI"]
 del us_states["AK"]
 banState = ["HI", "PR", "GU", "VI", "MP", "AS", "US"]
 
+# Sorts all lists by state alphabetical order
+#us_shot = [us_shot[state] for state in sorted(us_shot)]
+#us_pop = [us_pop[state] for state in sorted(us_pop)]
+
 # Gets coordinates for each state's borders
-state_xs = [us_states[code]["lons"] for code in us_states]
-state_ys = [us_states[code]["lats"] for code in us_states]
+state_xs = [us_states[state]["lons"] for state in sorted(us_states)]
+state_ys = [us_states[state]["lats"] for state in sorted(us_states)]
+state = [state for state in sorted(us_states)]
 
 # Get coordinates for each state's midpoint
-state_xs_mid = [np.mean(state) for state in state_xs]
-state_ys_mid = [np.mean(state) for state in state_ys]
+midpoint = ld.loadMid()
+state_xs_mid = [midpoint[state]['x'] for state in sorted(midpoint)]
+state_ys_mid = [midpoint[state]['y'] for state in sorted(midpoint)]
+
+# Sets a list of small states -- these dots will be smaller
+state_small = ['CT', 'DE', 'RI']
 
 # Sets colors where the keys are the 'Maximum' people shot in that range
 popColors = {40:'#FFE6E6', 80:'#FFB2B2', 120:'#FF8080', 160:'#FF4D4D', \
@@ -47,7 +57,7 @@ stateRatColors = []
 # Plots Gun Shots based on Raw Population
 # Loops through each state. We note how many people were shot in each state.
 #   We compare that to the colors table & save the proper color for the state.
-for state in us_states:
+for state in sorted(us_states):
     if state in banState: continue
     try:
         # Obtains color for raw populations
@@ -76,29 +86,35 @@ for state in us_states:
 output_file("usShot.html", title="Number of People Shot")
 
 # Add Hover Tool
-"""
 source = ColumnDataSource(
         data=dict(
-            x=state_xs,
-            y=state_ys,
-            shot=statePopColors,
+            states = [state for state in sorted(us_shot)],
+            x = state_xs,
+            y = state_ys,
+            shot = [us_shot[state] for state in sorted(us_shot)],
         )
     )
     
 hover = HoverTool(
         tooltips=[
-            ("Index", "$index"),
+            ("State", "@states"),
             ("Coordinates", "($x, $y)"),
-            ("Shot", "statePopColors[$index]"),
+            ("Shot", "@shot"),
         ]
     )
-"""
+
+
+# Default Tools
+toolbar = "pan,wheel_zoom,box_zoom,reset,resize,hover"
 
 # Create figure & plot for Raw Population
-p1 = figure(title="People Shot in 2013-15 vs. Raw Populations", toolbar_location="left", \
-            plot_width=1100, plot_height=700)
-p1.patches(state_xs, state_ys, fill_color=statePopColors, line_color="#884444", line_width=2)
-p1.circle(state_xs_mid, state_ys_mid, size=5, color="navy", alpha=0.8)
+p1 = figure(title="People Shot in 2013-15 vs. Raw Populations", tools=[hover], \
+            toolbar_location="left", plot_width=1100, plot_height=700)
+p1.patches(state_xs, state_ys, fill_color=statePopColors, line_color="#884444", \
+           line_width=2)
+
+p1.circle(state_xs_mid, state_ys_mid, size=8, color="navy", \
+          alpha=0.8, source=source)
 
 
 # Create figure & plot for Ratios
