@@ -19,7 +19,7 @@ us_states = us_states.data.copy()
 us_counties = us_counties.data.copy()
 
 # Loads Gun Data
-us_shot, us_attk= gd.loadGun()
+us_shot, us_attk= gd.loadGun(False)
 us_pop = gd.loadPop()
 
 # Loads Laws per state

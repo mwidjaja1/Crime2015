@@ -1,0 +1,532 @@
+City,City,Shootings,Lat,Lng
+"Mesquite, TX","Mesquite, TX",4.0,32.7667955,-96.5991593
+"St. Pauls, PA","St. Pauls, PA",4.0,40.2378775,-75.1308225
+"Zanesville, OH","Zanesville, OH",4.0,39.9403453,-82.0131924
+"South Bend, IN","South Bend, IN",4.0,41.6763545,-86.2519898
+"Rock Hill, SC","Rock Hill, SC",4.0,34.9248667,-81.0250784
+"Lunenburg, VA","Lunenburg, VA",4.0,36.9612967,-78.2660275
+"St. Petersburg, FL","St. Petersburg, FL",12.0,27.7518284,-82.6267345
+"KS City, KS","KS City, KS",5.0,39.114053,-94.6274636
+"Fayette County, GA","Fayette County, GA",5.0,33.4502206,-84.4802606
+"Norwalk, CA","Norwalk, CA",4.0,33.9022367,-118.081733
+"Milledgeville, GA","Milledgeville, GA",4.0,33.0801429,-83.2320991
+"Seat Pleasant, MD","Seat Pleasant, MD",4.0,38.8962231,-76.9066399
+"Haw River, NC","Haw River, NC",4.0,36.091526,-79.3641862
+"Pittsfield, MA","Pittsfield, MA",5.0,42.4500845,-73.2453824
+"Warrensville Heights, OH","Warrensville Heights, OH",6.0,41.4323067,-81.5102655
+"St. Joseph County, IN","St. Joseph County, IN",4.0,41.6228085,-86.3376761
+"Reading, PA","Reading, PA",4.0,40.3356483,-75.9268747
+"Ross Township, PA","Ross Township, PA",7.0,40.5367715,-80.0199562
+"Windsor, CA","Windsor, CA",4.0,38.5471327,-122.8163802
+"Bakersfield, CA","Bakersfield, CA",17.0,35.3732921,-119.0187125
+"Franklin, IL","Franklin, IL",5.0,39.6203259,-90.0440001
+"Fort Lauderdale, Fl","Fort Lauderdale, Fl",6.0,26.1224386,-80.1373174
+"Williston, FL","Williston, FL",5.0,29.38747,-82.4467705
+"Smith County, TX","Smith County, TX",4.0,32.3352505,-95.3102505
+"Winchester, KY","Winchester, KY",4.0,37.990079,-84.1796503
+"Greenwood, SC","Greenwood, SC",5.0,34.1954001,-82.1617883
+"Troup County, GA","Troup County, GA",5.0,33.0698575,-85.023346
+"Alturas, Ca","Alturas, Ca",6.0,41.4871146,-120.5424555
+"San Antonio, TX","San Antonio, TX",15.0,29.4241219,-98.4936282
+"Stockton, Ca","Stockton, Ca",4.0,37.9577016,-121.2907796
+"Queens, NY","Queens, NY",13.0,40.7282239,-73.7948516
+"Glade Spring, VA","Glade Spring, VA",5.0,36.791225,-81.7712324
+"Portsmouth, VA","Portsmouth, VA",10.0,36.8354258,-76.2982742
+"Palm Springs, FL","Palm Springs, FL",4.0,26.6359009,-80.0961538
+"Stockton, CA","Stockton, CA",41.0,37.9577016,-121.2907796
+"Wrightsville, GA","Wrightsville, GA",6.0,32.7293279,-82.719859
+"Danville, IL","Danville, IL",4.0,40.124481,-87.6300207
+"Fort Pierce, FL","Fort Pierce, FL",4.0,27.4467056,-80.3256056
+"Huntsville, AL","Huntsville, AL",5.0,34.7303688,-86.5861037
+"Dinwiddie, VA","Dinwiddie, VA",4.0,37.0774889,-77.5857056
+"Guilderland, NY","Guilderland, NY",4.0,,
+"Fayetteville, NC","Fayetteville, NC",14.0,35.0526641,-78.8783585
+"DeKalb, GA","DeKalb, GA",13.0,33.7956441,-84.2278796
+"Memphis, TN","Memphis, TN",58.0,35.1495343,-90.0489801
+"Perry, FL","Perry, FL",4.0,30.1174351,-83.5818147
+"Pasadena, CA","Pasadena, CA",5.0,34.1477849,-118.1445155
+"Lansing, MI","Lansing, MI",9.0,42.732535,-84.5555347
+"Jackson, MS","Jackson, MS",9.0,,
+"Rocky MOunt, NC","Rocky MOunt, NC",4.0,35.9382103,-77.7905339
+"York City, PA","York City, PA",4.0,,-76.727745
+"Roswell, NM","Roswell, NM",4.0,33.3942655,-104.5230242
+"MOncks Corner, SC","MOncks Corner, SC",5.0,33.1960027,-80.0131374
+"San Bernardino, CA","San Bernardino, CA",9.0,34.1083449,-117.2897652
+"Virginia Beach, VA","Virginia Beach, VA",9.0,36.8529263,-75.977985
+"Walterboro, SC","Walterboro, SC",7.0,32.9051704,-80.6667688
+"Aiken, SC","Aiken, SC",4.0,33.5604168,-81.7195533
+"Panama City Beach, FL","Panama City Beach, FL",7.0,30.1765914,-85.8054879
+"Elburn, IL","Elburn, IL",10.0,41.8922499,-88.4723014
+"Indianapolis, IN","Indianapolis, IN",46.0,39.768403,-86.158068
+"Manassas, VA","Manassas, VA",4.0,38.7509488,-77.4752667
+"Terrell, TX","Terrell, TX",5.0,32.7359626,-96.2752569
+"Albion, MI","Albion, MI",4.0,,-84.7530304
+"Fremont, OH","Fremont, OH",4.0,,
+"Washington, DC","Washington, DC",64.0,38.9071923,-77.0368707
+"Santa Barbara,CA","Santa Barbara,CA",12.0,,
+"Los Angelas, CA","Los Angelas, CA",4.0,34.0522342,-118.2436849
+"Darien, IL","Darien, IL",4.0,41.7483483,-87.9737943
+"Ocean Township, NJ","Ocean Township, NJ",4.0,40.2479729,-74.029843
+"Abbeville, LA","Abbeville, LA",7.0,29.9746502,-92.1342921
+"San Francisco, CA","San Francisco, CA",21.0,37.7749295,-122.4194155
+"Hampton, VA","Hampton, VA",5.0,37.0298687,-76.3452218
+"Madison County, AL","Madison County, AL",4.0,34.7239731,-86.4996546
+"Tyrone, MO","Tyrone, MO",9.0,,-91.8765399
+"Menasha, WI","Menasha, WI",5.0,44.2022084,-88.4464973
+"Philadelphia, PA","Philadelphia, PA",62.0,39.9525839,-75.1652215
+"Avondale, AZ","Avondale, AZ",4.0,,
+"Louisville, KY","Louisville, KY",19.0,38.2526647,-85.7584557
+"Ybor City, FL","Ybor City, FL",4.0,27.9650212,-82.4350941
+"Jersey City, NJ","Jersey City, NJ",12.0,40.7281575,-74.0776417
+"Parsons, KS","Parsons, KS",4.0,37.3403384,-95.2610838
+"East Germantown, PA","East Germantown, PA",4.0,40.0428157,-75.1691305
+"Hartford, CT","Hartford, CT",8.0,41.7637111,-72.6850932
+"Manhatten, KS","Manhatten, KS",4.0,39.1836082,-96.5716694
+"Cincinnati, OH","Cincinnati, OH",28.0,39.1031182,-84.5120196
+"Jackson, TN","Jackson, TN",4.0,35.6145169,-88.8139469
+"Portland, OR","Portland, OR",13.0,45.5230622,-122.6764816
+"Lexington, SC","Lexington, SC",4.0,33.9815369,-81.2362107
+"McKeesport, PA","McKeesport, PA",4.0,40.3470671,-79.8641232
+"Raleigh, NC","Raleigh, NC",5.0,35.7795897,-78.6381787
+"Oakdale, MN","Oakdale, MN",5.0,44.9630216,-92.9649361
+"Phonix, AZ","Phonix, AZ",5.0,33.4483771,-112.0740373
+"East Liverpool, OH","East Liverpool, OH",4.0,40.6186756,-80.5772928
+"Seattle, WA","Seattle, WA",9.0,47.6062095,-122.3320708
+Washington DC,Washington DC,15.0,38.9071923,-77.0368707
+"Greensburg, KY","Greensburg, KY",4.0,37.2608936,-85.4988548
+"Washington Park, IL","Washington Park, IL",4.0,38.6350501,-90.0928852
+"St. Louis, MO","St. Louis, MO",75.0,38.6270025,-90.1994042
+"Stamford, CT","Stamford, CT",5.0,41.0534302,-73.5387341
+"Dillon County, SC","Dillon County, SC",5.0,34.3596012,-79.4253776
+"Crockett County, TN","Crockett County, TN",6.0,35.7812386,-89.1324866
+"Deer Lodge, MT","Deer Lodge, MT",5.0,46.3990941,-112.7383721
+"Oakland, CA","Oakland, CA",35.0,37.8043637,-122.2711137
+"Los Angeles, CA","Los Angeles, CA",50.0,34.0522342,-118.2436849
+"Vanceboro, NC","Vanceboro, NC",4.0,35.3084953,-77.1541194
+"San Jose, CA","San Jose, CA",5.0,37.3382082,-121.8863286
+"Greenacres, FL","Greenacres, FL",4.0,26.6276276,-80.1353896
+"Chicago, Il","Chicago, Il",34.0,41.8781136,-87.6297982
+"Columbia, MO","Columbia, MO",4.0,38.9517053,-92.3340724
+"North Amityville, NY","North Amityville, NY",4.0,40.6988709,-73.4098154
+"Jacksonville, Fl","Jacksonville, Fl",5.0,30.3321838,-81.655651
+"Madera, CA","Madera, CA",4.0,36.9613356,-120.0607176
+"Akron, OH","Akron, OH",9.0,41.0814447,-81.5190053
+"Whitesburg, KY","Whitesburg, KY",4.0,37.1184318,-82.8268265
+"Tuscaloosa, AL","Tuscaloosa, AL",5.0,33.2098407,-87.5691735
+"Woonsocket, RI","Woonsocket, RI",4.0,42.0028761,-71.5147839
+"Chicago, IL","Chicago, IL",205.0,41.8781136,-87.6297982
+"Waynsboro, GA","Waynsboro, GA",4.0,33.0898731,-82.0156736
+"Mesa, AZ","Mesa, AZ",6.0,33.4151843,-111.8314724
+"Lehigh Acres, FL","Lehigh Acres, FL",5.0,26.6253497,-81.6248026
+"Jacksonville, FL","Jacksonville, FL",13.0,30.3321838,-81.655651
+"Valdosta, GA","Valdosta, GA",4.0,30.8327022,-83.2784851
+"Bellflower, CA","Bellflower, CA",4.0,33.8816818,-118.1170117
+"Salinas, CA","Salinas, CA",11.0,36.6777372,-121.6555013
+"Lookout Valley, TN","Lookout Valley, TN",4.0,34.9939646,-85.3746811
+"Englewood, IL","Englewood, IL",4.0,41.775305,-87.6416419
+"Tulsa, OK","Tulsa, OK",45.0,36.1539816,-95.992775
+"Miami Gardens, FL","Miami Gardens, FL",12.0,25.9420377,-80.2456045
+"Kinloch, MO","Kinloch, MO",4.0,38.7406065,-90.3253922
+"Darlington, SC","Darlington, SC",5.0,34.2998762,-79.8761741
+"High Point, NC","High Point, NC",4.0,35.9556923,-80.0053176
+"Alma, AL","Alma, AL",4.0,31.4640524,-87.7538838
+"LaGrange, GA","LaGrange, GA",7.0,33.0362218,-85.0322444
+"River Forest, IL","River Forest, IL",5.0,41.8978091,-87.8139483
+"Hendersonville, NC","Hendersonville, NC",4.0,35.3187279,-82.4609528
+"Habersham County, GA","Habersham County, GA",5.0,34.6478893,-83.5496566
+"Three Rivers, CA","Three Rivers, CA",4.0,36.4388364,-118.9045445
+"Brooklyn (Crown Heights), NY","Brooklyn (Crown Heights), NY",4.0,40.6681032,-73.9447994
+"Waco, TX","Waco, TX",27.0,31.549333,-97.1466695
+"Roseville, CA","Roseville, CA",6.0,38.7521235,-121.2880059
+"Began in Eden, TX","Began in Eden, TX",8.0,31.216276,-99.8456277
+"Granger, WA","Granger, WA",4.0,46.3420741,-120.1872727
+"Accomack County, VA","Accomack County, VA",4.0,37.7063323,-75.8069082
+"Bridgeport, CT","Bridgeport, CT",14.0,41.1865478,-73.1951767
+"Calumet City, IL","Calumet City, IL",11.0,41.6155909,-87.5294871
+"St. Petersberg, FL","St. Petersberg, FL",4.0,27.7518284,-82.6267345
+"Sells, AZ","Sells, AZ",5.0,31.9120215,-111.881234
+"Lumberton, NC","Lumberton, NC",4.0,34.6182199,-79.0086424
+"Hauma, LA","Hauma, LA",4.0,29.5957696,-90.7195348
+"Callison, SC","Callison, SC",6.0,34.0145697,-82.1256771
+"East Orange, NJ","East Orange, NJ",4.0,40.767323,-74.2048677
+"Mission Viejo, CA","Mission Viejo, CA",4.0,33.6000232,-117.6719953
+"Double Springs, AL","Double Springs, AL",4.0,34.1464916,-87.4022386
+"Houston, TX","Houston, TX",67.0,29.7604267,-95.3698028
+"Greenville, NC","Greenville, NC",10.0,35.612661,-77.3663538
+"Rome, GA","Rome, GA",4.0,34.257038,-85.1646726
+"Meridian, MS","Meridian, MS",4.0,32.3643098,-88.703656
+"Pine Bluff, AR","Pine Bluff, AR",4.0,34.2284312,-92.0031955
+"Newark, NJ","Newark, NJ",41.0,40.735657,-74.1723667
+"Pine Hills, FL","Pine Hills, FL",11.0,28.5577794,-81.4534046
+"Shreveport, LA","Shreveport, LA",25.0,32.5251516,-93.7501789
+"Lauderdale Lakes, FL","Lauderdale Lakes, FL",4.0,26.1664736,-80.2083806
+"Yakima, WA","Yakima, WA",6.0,46.6020711,-120.5058987
+"Centerville, IL","Centerville, IL",5.0,41.0655519,-90.052841
+"Culpeper, VA","Culpeper, VA",5.0,38.4729632,-77.9962512
+"Lowell, MA","Lowell, MA",5.0,42.6334247,-71.3161718
+"Grand Rapids, MI","Grand Rapids, MI",4.0,42.9633599,-85.6680863
+"Oklahoma City, OK","Oklahoma City, OK",16.0,35.4675602,-97.5164276
+"Erie, OH","Erie, OH",4.0,41.4349882,-82.4752757
+"Ottawa, KS","Ottawa, KS",4.0,38.615768,-95.2686366
+"San Carlos Park, FL","San Carlos Park, FL",5.0,26.4673016,-81.8014742
+"King, NC","King, NC",4.0,36.2806939,-80.3592197
+"Decatur, IL","Decatur, IL",5.0,39.8403147,-88.9548001
+"Manson, WA","Manson, WA",4.0,47.8847447,-120.1567011
+"Marysville, WA","Marysville, WA",6.0,48.0517637,-122.1770818
+"Corpus Christi, TX","Corpus Christi, TX",4.0,27.8005828,-97.396381
+"MOdesto, CA","MOdesto, CA",16.0,37.6390972,-120.9968782
+"Paris, TX","Paris, TX",4.0,33.6609389,-95.555513
+"Ocala, FL","Ocala, FL",6.0,29.1871986,-82.1400923
+"Cyprus, TX","Cyprus, TX",18.0,29.9716905,-95.6937856
+"Troy, NY","Troy, NY",5.0,42.7284117,-73.6917851
+"Wilmington, CA","Wilmington, CA",4.0,33.7857948,-118.2643567
+"Raceland, LA","Raceland, LA",7.0,29.7274331,-90.5989759
+"Toledo, OH","Toledo, OH",8.0,41.6639383,-83.555212
+"Brooklyn Center, MN","Brooklyn Center, MN",4.0,45.076076,-93.3327283
+"Detroit, MI","Detroit, MI",58.0,42.331427,-83.0457538
+"Dallas, Tx","Dallas, Tx",11.0,32.7766642,-96.7969879
+"San Fernando Valley, CA","San Fernando Valley, CA",6.0,34.1825782,-118.4396756
+"Hollister, CA","Hollister, CA",4.0,36.8524545,-121.4016021
+"North Charlston, SC","North Charlston, SC",4.0,32.8546197,-79.9748103
+"Brooklyn (Bushwick), NY","Brooklyn (Bushwick), NY",5.0,40.6944282,-73.9212858
+"Huntington, WV","Huntington, WV",10.0,38.4192496,-82.445154
+"Brockton, MA","Brockton, MA",5.0,42.0834335,-71.0183787
+"Tustin, CA","Tustin, CA",7.0,33.7458511,-117.826166
+"Columbia, SC","Columbia, SC",4.0,34.0007104,-81.0348144
+"Kalamazoo, MI","Kalamazoo, MI",4.0,42.2917069,-85.5872286
+"Detroit, Mi","Detroit, Mi",47.0,42.331427,-83.0457538
+"Chesterfield County, SC","Chesterfield County, SC",5.0,34.6830936,-80.1428584
+"Blytheville, AR","Blytheville, AR",12.0,35.9272953,-89.9189753
+"Dallas, TX","Dallas, TX",25.0,32.7766642,-96.7969879
+"Manhattan, NY","Manhattan, NY",9.0,40.7830603,-73.9712488
+"Pittsburgh, PA","Pittsburgh, PA",29.0,40.4406248,-79.9958864
+"Florence, AL","Florence, AL",4.0,34.79981,-87.677251
+"Oak Lawn, IL","Oak Lawn, IL",4.0,41.719978,-87.7479528
+"Ashville, PA","Ashville, PA",4.0,40.5600684,-78.5486289
+"Woodlawn, IL","Woodlawn, IL",4.0,41.780228,-87.5939087
+"Sisseton, SD","Sisseton, SD",5.0,45.6646815,-97.0498046
+"Hialea, FL","Hialea, FL",7.0,25.8575963,-80.2781057
+"San Francicsco, CA","San Francicsco, CA",4.0,37.7749295,-122.4194155
+"Canton, OH","Canton, OH",4.0,40.7989473,-81.378447
+"Phoenix, Az","Phoenix, Az",4.0,33.4483771,-112.0740373
+"Detriot, MI","Detriot, MI",5.0,42.331427,-83.0457538
+"Davenport, IA","Davenport, IA",5.0,41.5236437,-90.5776367
+"West Palm Beach, FL","West Palm Beach, FL",4.0,26.7153424,-80.0533746
+"Suffolk, VA","Suffolk, VA",4.0,36.7282054,-76.5835621
+"Baton Rouge, LA","Baton Rouge, LA",8.0,30.4582829,-91.1403196
+"Oberlin, OH","Oberlin, OH",4.0,41.2939386,-82.2173786
+"Charenton, LA","Charenton, LA",4.0,29.8815936,-91.5251126
+"Witchita, KS","Witchita, KS",7.0,37.6871761,-97.330053
+"Breaux Bridge, LA","Breaux Bridge, LA",4.0,30.2735323,-91.8992837
+"Kent, WA","Kent, WA",5.0,47.3809335,-122.2348431
+"Phoenix, AZ","Phoenix, AZ",23.0,33.4483771,-112.0740373
+"Radcliff, KY","Radcliff, KY",4.0,37.8403456,-85.9491298
+"Denton, TX","Denton, TX",4.0,33.2148412,-97.1330683
+"Buffalo, NY","Buffalo, NY",26.0,42.8864468,-78.8783689
+"Channelview, TX","Channelview, TX",5.0,29.7760599,-95.1146533
+"Inkster, MI","Inkster, MI",4.0,42.2942045,-83.3099303
+"Southern Pines, NC","Southern Pines, NC",5.0,35.1740471,-79.3922539
+"Sandusky, OH","Sandusky, OH",7.0,41.4489396,-82.7079605
+"Daytona Beach, FL","Daytona Beach, FL",8.0,29.2108147,-81.0228331
+"Arlington, TX","Arlington, TX",8.0,32.735687,-97.1080656
+"Tucson, AZ","Tucson, AZ",5.0,32.2217429,-110.926479
+"Holly Hill, SC","Holly Hill, SC",5.0,33.3226624,-80.4137037
+"Roseburg, OR","Roseburg, OR",17.0,43.216505,-123.3417381
+"Wichita, KS","Wichita, KS",13.0,37.6871761,-97.330053
+"Manchester, IL","Manchester, IL",7.0,39.5422692,-90.3323434
+"Springfield, MO","Springfield, MO",4.0,37.2089572,-93.2922989
+"Fort Meyers, FL","Fort Meyers, FL",4.0,26.640628,-81.8723084
+"Highland, CA","Highland, CA",5.0,34.1283442,-117.2086513
+"Minneapolis, MN","Minneapolis, MN",36.0,44.977753,-93.2650108
+"Coachella, CA","Coachella, CA",4.0,33.6803003,-116.173894
+"West Frankfort, IL","West Frankfort, IL",4.0,37.8985966,-88.9233622
+"Salem, OR","Salem, OR",4.0,44.9428975,-123.0350963
+"Sarasota, Fl","Sarasota, Fl",4.0,27.3364347,-82.5306527
+"MOreno Valley, CA","MOreno Valley, CA",11.0,33.9424658,-117.2296717
+"Roanoke, VA","Roanoke, VA",11.0,37.2709704,-79.9414266
+"Kissimmee, FL","Kissimmee, FL",19.0,28.2919557,-81.407571
+"Began in Riverside, CA","Began in Riverside, CA",9.0,51.0658946,-114.0878861
+"Salt Lake City, UT","Salt Lake City, UT",6.0,40.7607793,-111.8910474
+"Springfield, Ma","Springfield, Ma",4.0,42.1014831,-72.589811
+"Anchorage, AK","Anchorage, AK",10.0,61.2180556,-149.9002778
+"Taunton, MA","Taunton, MA",4.0,41.900101,-71.0897674
+"Park Forest, IL","Park Forest, IL",4.0,41.4914236,-87.6744891
+"Nashville, TN","Nashville, TN",8.0,36.1626638,-86.7816016
+"Opp, AL","Opp, AL",5.0,31.2826685,-86.2555067
+"Bradenton, FL","Bradenton, FL",4.0,27.4989278,-82.5748194
+"Westover, WV","Westover, WV",5.0,39.6345259,-79.9697862
+"New Orleans, LA","New Orleans, LA",102.0,29.9510658,-90.0715323
+"Muskegon, MI","Muskegon, MI",4.0,43.2341813,-86.2483921
+"Gates, NY","Gates, NY",7.0,43.1501288,-77.6965819
+"Gentilly, LA","Gentilly, LA",4.0,30.014503,-90.0606637
+"Galt, CA","Galt, CA",7.0,38.2546373,-121.2999485
+"Aurora, CO","Aurora, CO",8.0,39.7294319,-104.8319195
+"Kentwood, MI","Kentwood, MI",5.0,42.8694731,-85.6447492
+"Barberton, OH","Barberton, OH",4.0,41.012833,-81.6051221
+"Springdale, MD","Springdale, MD",4.0,38.9376113,-76.8388602
+"Columbus, MO","Columbus, MO",4.0,38.8586209,-93.8907751
+"Syracuse, NY","Syracuse, NY",10.0,43.0481221,-76.1474244
+"Columbus, MS","Columbus, MS",4.0,33.4956744,-88.4272627
+"Merced County, CA","Merced County, CA",5.0,37.2009788,-120.7120023
+"Pelzer, NC","Pelzer, NC",4.0,35.633852,-82.5772336
+"Orlando, FL","Orlando, FL",9.0,28.5383355,-81.3792365
+"Cleaveland, OH","Cleaveland, OH",7.0,41.49932,-81.6943605
+"Chester Township, PA","Chester Township, PA",5.0,39.8517618,-75.4024228
+"Fort Wayne, IN","Fort Wayne, IN",9.0,41.079273,-85.1393513
+"Aguas Buenas, PR","Aguas Buenas, PR",10.0,18.257252,-66.1050908
+"Fairfield, Ca","Fairfield, Ca",4.0,38.2493581,-122.0399663
+"El Paso, TX","El Paso, TX",6.0,31.7775757,-106.4424559
+"Sand City, CA","Sand City, CA",4.0,36.6171819,-121.8482855
+"Smithfield, NC","Smithfield, NC",4.0,35.5084935,-78.3394455
+"Lakeland, FL","Lakeland, FL",4.0,28.0394654,-81.9498042
+"Margate, FL","Margate, FL",4.0,26.2445263,-80.206436
+"Fort Wayne, In","Fort Wayne, In",5.0,41.079273,-85.1393513
+"Bell, FL","Bell, FL",8.0,29.7555125,-82.8626239
+"Bronx, NY","Bronx, NY",14.0,40.8370495,-73.8654295
+"Amarillo, TX","Amarillo, TX",4.0,35.2219971,-101.8312969
+"Rochester, NY","Rochester, NY",25.0,43.16103,-77.6109219
+"MOntgomery County, PA","MOntgomery County, PA",9.0,40.2290075,-75.3878525
+"Belle Glade, FL","Belle Glade, FL",9.0,26.6845104,-80.6675577
+"South Memphis, TN","South Memphis, TN",4.0,35.0938569,-90.0466559
+"Elgin, Il","Elgin, Il",5.0,42.0354084,-88.2825668
+"Irvington, NJ","Irvington, NJ",15.0,40.7263249,-74.2286435
+"Aberdeen, MS","Aberdeen, MS",4.0,33.8251139,-88.5436553
+"Ardmore, OK","Ardmore, OK",5.0,34.1742611,-97.1436254
+"Harbor Gateway (Los Angeles), CA","Harbor Gateway (Los Angeles), CA",4.0,33.8067833,-118.3071031
+"Newport News, VA","Newport News, VA",5.0,37.0870821,-76.4730122
+"Berkeley, MO","Berkeley, MO",4.0,38.7544952,-90.3312256
+"Bennettsville, SC","Bennettsville, SC",5.0,34.6173803,-79.6847814
+"Denver, CO","Denver, CO",8.0,39.7392358,-104.990251
+"Oak Park, MI","Oak Park, MI",4.0,42.4594803,-83.1827051
+"Bristol, TN","Bristol, TN",5.0,36.5951059,-82.1887444
+"Platte, SD","Platte, SD",6.0,43.3869397,-98.8445303
+"North Rome, GA","North Rome, GA",4.0,34.257038,-85.1646726
+"Port Norris, NJ","Port Norris, NJ",4.0,39.2459477,-75.035178
+"Sauk Villiage, IL","Sauk Villiage, IL",4.0,41.4883685,-87.5675414
+"Reno, NV","Reno, NV",8.0,39.5296329,-119.8138027
+"Mankato, MN","Mankato, MN",4.0,44.1635775,-93.9993996
+"Compton, CA","Compton, CA",4.0,33.8958492,-118.2200712
+"Shaler, PA","Shaler, PA",4.0,40.5309184,-79.9528451
+"Brookhaven, MS","Brookhaven, MS",5.0,31.5790588,-90.4406506
+"Statesville, NC","Statesville, NC",4.0,35.7826363,-80.8872959
+"Gary, IN","Gary, IN",15.0,41.5933696,-87.3464271
+"Harrington, DE","Harrington, DE",6.0,38.9237244,-75.5777033
+"Peachtree Corners, GA","Peachtree Corners, GA",5.0,33.9698929,-84.2214551
+"Hawthorne, CA","Hawthorne, CA",4.0,33.9164032,-118.3525748
+"Johnstown, PA","Johnstown, PA",4.0,40.3267407,-78.9219698
+"MOntclair, NJ","MOntclair, NJ",4.0,40.8259007,-74.2090053
+"Roy, UT","Roy, UT",4.0,41.1616108,-112.0263313
+"Northhampton, PA","Northhampton, PA",4.0,40.6862075,-75.4968501
+"North Liberty, IA","North Liberty, IA",4.0,41.739482,-91.6080974
+"Palo Alto, CA","Palo Alto, CA",5.0,37.4418834,-122.1430195
+"Chester, PA","Chester, PA",8.0,39.849557,-75.3557457
+"Richmond, IN","Richmond, IN",4.0,39.8289369,-84.8902382
+"Flint, MI","Flint, MI",16.0,43.0125274,-83.6874562
+"West Broward, FL","West Broward, FL",4.0,26.190096,-80.365865
+"Fruitland Township, MI","Fruitland Township, MI",4.0,43.3295527,-86.357952
+"Lake Butler, FL","Lake Butler, FL",5.0,30.0227391,-82.3395574
+"Defiance, OH","Defiance, OH",4.0,41.2844933,-84.3557802
+"Washington, D.C.","Washington, D.C.",4.0,38.9071923,-77.0368707
+"Lancaster, CA","Lancaster, CA",4.0,34.6867846,-118.1541632
+"Tangelo Park, FL","Tangelo Park, FL",4.0,28.4558386,-81.4459047
+"Omaha, NE","Omaha, NE",20.0,41.2523634,-95.9979883
+"Savannah, GA","Savannah, GA",10.0,32.0835407,-81.0998342
+"San Juan, PR","San Juan, PR",5.0,18.4663338,-66.1057217
+"Fontana, CA","Fontana, CA",4.0,34.0922335,-117.435048
+"Knoxville, TN","Knoxville, TN",8.0,35.9606384,-83.9207392
+"Orangeburg, SC","Orangeburg, SC",4.0,33.4918203,-80.8556476
+"Cartersville, GA","Cartersville, GA",7.0,34.1650972,-84.7999382
+"Livermore, CA","Livermore, CA",5.0,37.6818745,-121.7680088
+"Cabarrus County, NC","Cabarrus County, NC",4.0,35.4168123,-80.5882803
+"Waynesville, IN","Waynesville, IN",4.0,39.114391,-85.893517
+"New Haven, CT","New Haven, CT",11.0,41.308274,-72.9278835
+"Trenton, NJ","Trenton, NJ",9.0,40.2170534,-74.7429384
+"Marion, NC","Marion, NC",4.0,35.6840131,-82.0092745
+"Lorain, OH","Lorain, OH",5.0,41.452819,-82.1823746
+"Douglasville, GA","Douglasville, GA",7.0,33.7514966,-84.7477136
+"Camden, NJ","Camden, NJ",4.0,39.9259463,-75.1196199
+"Antioch, CA","Antioch, CA",7.0,38.0049214,-121.805789
+"Erie, PA","Erie, PA",6.0,42.1292241,-80.085059
+"Hopewell, VA","Hopewell, VA",4.0,37.3043154,-77.2872001
+"Killeen, TX","Killeen, TX",10.0,31.1171194,-97.7277959
+"Gastonia, NC","Gastonia, NC",5.0,35.262082,-81.1873005
+"KS City, MO","KS City, MO",31.0,39.0997265,-94.5785667
+"Miami-Dade, FL","Miami-Dade, FL",17.0,25.5516034,-80.6326916
+"Fuquay-Varina, NC","Fuquay-Varina, NC",4.0,35.5843235,-78.8000128
+"Aurora, IL","Aurora, IL",4.0,41.7605849,-88.3200715
+" Sikeston, MO"," Sikeston, MO",4.0,36.876719,-89.5878579
+"Bogalusia, LA","Bogalusia, LA",4.0,30.7910204,-89.8486858
+"Port Orange, FL","Port Orange, FL",4.0,29.1383165,-80.9956105
+"Wheat Ridge, CO","Wheat Ridge, CO",4.0,39.766098,-105.0772063
+"MOneta, VA","MOneta, VA",4.0,37.1812536,-79.6172536
+"Beaumont, TX","Beaumont, TX",8.0,30.080174,-94.1265562
+"Auburn, WA","Auburn, WA",4.0,47.3073228,-122.2284532
+"Saginaw, Mi","Saginaw, Mi",4.0,43.4194699,-83.9508068
+"Kokomo, IN","Kokomo, IN",4.0,40.486427,-86.1336033
+"Manchester, CT","Manchester, CT",4.0,41.7759301,-72.5215009
+"Cypress, TX","Cypress, TX",4.0,29.9716905,-95.6937856
+"Dayton, OH","Dayton, OH",11.0,39.7589478,-84.1916069
+"Wilmington, DE","Wilmington, DE",17.0,39.7390721,-75.5397878
+"Charlotte, NC","Charlotte, NC",31.0,35.2270869,-80.8431267
+"Snellville, GA","Snellville, GA",4.0,33.857328,-84.0199108
+"Webster, NY","Webster, NY",5.0,43.2122851,-77.4299939
+"Starkville, MS","Starkville, MS",5.0,33.4503998,-88.8183872
+"Santa MOnica, CA","Santa MOnica, CA",10.0,34.0194543,-118.4911912
+"St Louis, MO","St Louis, MO",4.0,38.6270025,-90.1994042
+"Shelby, NC","Shelby, NC",4.0,35.2923513,-81.5356463
+"Beloit, WI","Beloit, WI",4.0,42.5083482,-89.0317765
+"Baltimore, MD","Baltimore, MD",66.0,39.2903848,-76.6121893
+"Winston-Salem, NC","Winston-Salem, NC",4.0,36.0998596,-80.244216
+"Fresno, CA","Fresno, CA",45.0,36.7468422,-119.7725868
+"Opa-locka, FL","Opa-locka, FL",4.0,25.9023168,-80.2503271
+"Tampa, FL","Tampa, FL",9.0,27.950575,-82.4571776
+"Sylvester, GA","Sylvester, GA",7.0,31.5307349,-83.8354542
+"Perris, CA","Perris, CA",5.0,33.7825194,-117.2286478
+"Norfolk, VA","Norfolk, VA",26.0,36.8507689,-76.2858726
+"Pomona, CA","Pomona, CA",13.0,34.055103,-117.7499909
+"E. Palo Alto, CA","E. Palo Alto, CA",6.0,37.4688273,-122.1410751
+"Forsyth County, GA","Forsyth County, GA",5.0,34.2358502,-84.1435136
+"Havey, LA","Havey, LA",5.0,29.9035387,-90.0772944
+"Miami, FL","Miami, FL",66.0,25.7616798,-80.1917902
+"West Little River, FL","West Little River, FL",9.0,25.8570407,-80.2369934
+"Oklahoma, OK","Oklahoma, OK",4.0,35.4675602,-97.5164276
+"Elmhurst, IL","Elmhurst, IL",4.0,41.8994744,-87.9403418
+"Columbia, TN","Columbia, TN",4.0,35.6150716,-87.0352831
+"Whitehaven, TN","Whitehaven, TN",5.0,35.0277933,-90.0466559
+"Albuquerque, NM","Albuquerque, NM",20.0,35.0853336,-106.6055534
+"Panola County, MS","Panola County, MS",4.0,34.4198016,-89.9253233
+"Brentwood, CA","Brentwood, CA",4.0,37.931868,-121.6957863
+"North Las Vegas, NV","North Las Vegas, NV",4.0,36.1988592,-115.1175013
+"Federal Way, WA","Federal Way, WA",7.0,47.3223221,-122.3126222
+"Los Chavez, NM","Los Chavez, NM",4.0,34.736851,-106.7554819
+"Greensboro, NC","Greensboro, NC",13.0,36.0726354,-79.7919754
+"Milwaukee, WI","Milwaukee, WI",32.0,43.0389025,-87.9064736
+"Camp Spring, MD","Camp Spring, MD",4.0,38.8040027,-76.9066396
+"Suburban Salt Lake City (Midvale), UT","Suburban Salt Lake City (Midvale), UT",4.0,40.5941149,-111.8491003
+"Chattanooga, TN","Chattanooga, TN",21.0,35.0456297,-85.3096801
+"Elizabeth, NJ","Elizabeth, NJ",4.0,40.6639916,-74.2107006
+"Atlanta, Ga","Atlanta, Ga",4.0,33.7489954,-84.3879824
+"Rock Falls, IL","Rock Falls, IL",4.0,41.7797533,-89.6889967
+"Wyandanch, NY","Wyandanch, NY",4.0,40.7539878,-73.360398
+"Venice, IL","Venice, IL",6.0,38.6722727,-90.169832
+"Phillidelphia, PA","Phillidelphia, PA",6.0,39.9525839,-75.1652215
+"Capitol Heights, MD","Capitol Heights, MD",5.0,38.8851122,-76.9158068
+"Brooksville, FL","Brooksville, FL",4.0,28.5552719,-82.3878709
+"Farmington, NM","Farmington, NM",4.0,36.7280583,-108.2186856
+"Tallahassee, FL","Tallahassee, FL",4.0,30.4382559,-84.2807329
+"Long Branch, NJ","Long Branch, NJ",4.0,40.3042778,-73.9923596
+"Atlanta, GA","Atlanta, GA",42.0,33.7489954,-84.3879824
+"Flatbush, NY","Flatbush, NY",4.0,40.6409217,-73.9624327
+"Greenville, GA","Greenville, GA",10.0,33.0287373,-84.7129848
+"Salem City, NJ","Salem City, NJ",4.0,39.5717796,-75.4671423
+"Rockford, IL","Rockford, IL",19.0,42.2711311,-89.0939952
+"Harrisburg, PA","Harrisburg, PA",8.0,40.2731911,-76.8867008
+"Herkimer, NY","Herkimer, NY",7.0,43.0256259,-74.9859889
+"Myrtle Beach, SC","Myrtle Beach, SC",4.0,33.6890603,-78.8866943
+"Fernley, NV","Fernley, NV",5.0,39.6079683,-119.2518349
+"Clarksburg, WV","Clarksburg, WV",4.0,39.2806451,-80.3445341
+"Clairton, PA","Clairton, PA",6.0,40.292292,-79.881715
+"Weir, TX","Weir, TX",5.0,30.6749425,-97.5861701
+"Tuskegee, AL","Tuskegee, AL",5.0,32.430237,-85.7077266
+"Baker, LA","Baker, LA",4.0,30.5882429,-91.168163
+"MOntgomery, AL","MOntgomery, AL",21.0,32.3668052,-86.2999689
+"Kileen, TX","Kileen, TX",24.0,31.1171194,-97.7277959
+"Renegade MOuntain, TN","Renegade MOuntain, TN",4.0,35.8823309,-84.8522294
+"Plainfield, NJ","Plainfield, NJ",4.0,40.6337136,-74.4073736
+"North Charleston, SC","North Charleston, SC",4.0,32.8546197,-79.9748103
+"Norcross, GA","Norcross, GA",4.0,33.9412127,-84.2135309
+"Cadiz, KY","Cadiz, KY",4.0,36.8650496,-87.835295
+"Tampa Bay, FL","Tampa Bay, FL",4.0,27.7495159,-82.5834947
+"Clarksville, TN","Clarksville, TN",9.0,36.5297706,-87.3594528
+"New Port Richey, FL","New Port Richey, FL",4.0,28.2441768,-82.7192671
+"Banning, CA","Banning, CA",4.0,33.9255713,-116.8764103
+"Richmond, Ca","Richmond, Ca",4.0,37.9357576,-122.3477486
+"Stopover, KY","Stopover, KY",4.0,37.5159411,-82.09124
+"Skyline, WA","Skyline, WA",5.0,48.483158,-122.684618
+"Tarboro, NC","Tarboro, NC",4.0,35.8968236,-77.5358049
+"Pontiac, MI","Pontiac, MI",7.0,42.6389216,-83.2910468
+"Merced, CA","Merced, CA",4.0,37.3021632,-120.4829677
+"Hamilton Township, NJ","Hamilton Township, NJ",5.0,40.2115109,-74.6796651
+"Starr County, TX","Starr County, TX",4.0,26.6215167,-98.7481167
+"Macon, GA","Macon, GA",27.0,32.8406946,-83.6324022
+"Apache Junction, AZ","Apache Junction, AZ",4.0,33.4150485,-111.5495777
+"Gila Bend, AZ","Gila Bend, AZ",4.0,32.9478236,-112.7168305
+"Centreville, IL","Centreville, IL",4.0,38.5833842,-90.125109
+"Lancaster, TX","Lancaster, TX",6.0,32.5920798,-96.7561082
+"Boston, MA","Boston, MA",18.0,42.3600825,-71.0588801
+"Hope Mills, NC","Hope Mills, NC",7.0,34.9704419,-78.9453056
+"Fort Worth, Tx","Fort Worth, Tx",5.0,32.7554883,-97.3307658
+"Spanish Fork, UT","Spanish Fork, UT",5.0,40.114955,-111.654923
+"New York (Queens), NY","New York (Queens), NY",4.0,40.7282239,-73.7948516
+"Joliet, IL","Joliet, IL",8.0,41.525031,-88.0817251
+"Frayser, TN","Frayser, TN",5.0,35.203847,-90.0466559
+"Sacramento, CA","Sacramento, CA",35.0,38.5815719,-121.4943996
+"Brooklyn, NY","Brooklyn, NY",75.0,40.6781784,-73.9441579
+"Broad Ripple, IN","Broad Ripple, IN",11.0,39.8686846,-86.1340693
+"Fort Worth, TX","Fort Worth, TX",10.0,32.7554883,-97.3307658
+"Shoreview, MN","Shoreview, MN",4.0,45.0791325,-93.1471667
+"Las Piedras, PR","Las Piedras, PR",6.0,18.2025991,-65.8441742
+"Olivehurst, CA","Olivehurst, CA",4.0,39.0954484,-121.5521858
+"Birmingham, AL","Birmingham, AL",4.0,33.5206608,-86.80249
+"MOntgomory, IL","MOntgomory, IL",6.0,41.730585,-88.3459048
+"Little Rock, AR","Little Rock, AR",4.0,34.7464809,-92.2895948
+"Conyers, GA","Conyers, GA",4.0,33.6676103,-84.0176904
+"Oklahoma City, Ok","Oklahoma City, Ok",4.0,35.4675602,-97.5164276
+"Vallejo, CA","Vallejo, CA",21.0,38.1040864,-122.2566367
+"Colorado Springs, CO","Colorado Springs, CO",5.0,38.8338816,-104.8213634
+"MOultrie, GA","MOultrie, GA",4.0,31.1799407,-83.7888387
+"Red Springs, NC","Red Springs, NC",4.0,34.8151633,-79.183091
+"Springfield, OH","Springfield, OH",8.0,39.9242266,-83.8088171
+"Santa Ana, CA","Santa Ana, CA",5.0,33.7455731,-117.8678338
+"Houston County, AL","Houston County, AL",4.0,31.1318686,-85.3136218
+"Topeka, KS","Topeka, KS",8.0,39.0558235,-95.6890185
+"San Bernadino, CA","San Bernadino, CA",7.0,34.1083449,-117.2897652
+"New Bedford, MA","New Bedford, MA",7.0,41.6362152,-70.934205
+"Durham, NC","Durham, NC",8.0,35.9940329,-78.898619
+"San Diego, CA","San Diego, CA",12.0,32.715738,-117.1610838
+"Forest, MS","Forest, MS",4.0,32.3645888,-89.4742348
+"Slidell, LA","Slidell, LA",8.0,30.2751945,-89.7811745
+"Long Beach, CA","Long Beach, CA",21.0,33.7700504,-118.1937395
+"Florida City, FL","Florida City, FL",4.0,25.4478898,-80.4792237
+"Medford, NY","Medford, NY",4.0,40.8175985,-73.0001068
+"Providence, RI","Providence, RI",9.0,41.8239891,-71.4128343
+"Calais, ME","Calais, ME",4.0,45.1889633,-67.2786038
+"Ridgecrest, CA","Ridgecrest, CA",4.0,35.6224561,-117.6708966
+"Lea County (Hobbs), NM","Lea County (Hobbs), NM",4.0,32.7026116,-103.1360403
+" Fort Bend County, TX"," Fort Bend County, TX",4.0,29.5692614,-95.8142885
+"Pompano Beach, FL","Pompano Beach, FL",4.0,26.2378597,-80.1247667
+"East St. Louis, IL","East St. Louis, IL",4.0,38.624514,-90.1506465
+"Columbus, OH","Columbus, OH",24.0,39.9611755,-82.9987942
+"Herndon, VA","Herndon, VA",4.0,38.9695545,-77.3860976
+"Utica, NY","Utica, NY",5.0,43.100903,-75.232664
+"Charleston, SC","Charleston, SC",13.0,32.7764749,-79.9310512
+"MOscow, ID","MOscow, ID",4.0,46.7323875,-117.0001651
+"Los Banos, CA","Los Banos, CA",4.0,37.0582786,-120.8499151
+"Vineland, NJ","Vineland, NJ",4.0,39.4863773,-75.0259637
+"Lexington, KY","Lexington, KY",14.0,38.0405837,-84.5037164
+"Rice, TX","Rice, TX",5.0,32.2437586,-96.4985966
+"Tabernacle, NJ","Tabernacle, NJ",4.0,39.8433853,-74.7107048
+"Cleveland, OH","Cleveland, OH",23.0,41.49932,-81.6943605
+"Columbus, GA","Columbus, GA",5.0,32.4609764,-84.9877094
+"Winton Hills, OH","Winton Hills, OH",5.0,39.1866941,-84.5169757
+"New York, NY","New York, NY",8.0,40.7127837,-74.0059413
+"Rockford, Il","Rockford, Il",4.0,42.2711311,-89.0939952
+"Richmond, VA","Richmond, VA",12.0,37.5407246,-77.4360481
+"Campbell, OH","Campbell, OH",5.0,41.0783918,-80.5992396
+"Pleasant Valley, NY","Pleasant Valley, NY",4.0,41.7445382,-73.8212439
+"Saginaw, MI","Saginaw, MI",8.0,43.4194699,-83.9508068
+"Las Vegas, NV","Las Vegas, NV",39.0,36.1699412,-115.1398296
+"Lafayette, LA","Lafayette, LA",12.0,30.2240897,-92.0198427
+"Lillington, NC","Lillington, NC",4.0,35.399327,-78.8158528
+"Jefferson County, AL","Jefferson County, AL",4.0,33.4914122,-86.9824288
+"Cobb County, GA","Cobb County, GA",11.0,33.8999297,-84.564147
+"Barre, VT","Barre, VT",4.0,44.1970055,-72.5020494
+"Muskegon Heights, MI","Muskegon Heights, MI",4.0,43.2011264,-86.2389464
+"Erwin, TN","Erwin, TN",4.0,36.1451082,-82.4168055
+"Jonesboro, AR","Jonesboro, AR",8.0,35.8422967,-90.704279
+"Paterson, NJ","Paterson, NJ",15.0,40.9167654,-74.171811
+"Arlington, VA","Arlington, VA",4.0,38.8799697,-77.1067698
+"Kingsessing, PA","Kingsessing, PA",4.0,39.9391535,-75.221652
+"Williamsport, PA","Williamsport, PA",5.0,41.2411897,-77.0010786
+"Navajo Nation, AZ","Navajo Nation, AZ",4.0,36.0672173,-109.1880047
+"Saco, ME","Saco, ME",5.0,43.5009176,-70.4428286

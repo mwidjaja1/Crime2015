@@ -7,12 +7,13 @@ import pandas as pd
     From:   Main Function
     
     Input:  (Not explicitly) CSV Files for 2013, 2014, & 2015 in a directory
-            specifed as inDir below. 
+            specifed as inDir below. Also set (1) True = Save City, State vs. 
+            False = Save State only
     Output: Two dicts where one counts how many people were shot/injured per
             state as {stateSymbol: <sum of all people shot & injured>} & the 
             other counts shootings per state as {stateSymbol: <sum of attacks>}
 -----------------------------------------------------------------------------"""
-def loadGun():
+def loadGun(saveCity):
     # Set Input Paths & Dataframe
     inDir = '/Users/Matthew/Github/Crime2015/Data/'
     shooterDf = pd.DataFrame()
@@ -23,13 +24,15 @@ def loadGun():
         shooterDf = shooterDf.append(csvDF)
     
     # Replace States in list
-    replaceDict = {'Illinois': 'IL', 'KA':'KS', 'Kansas':'KS', 'Louisiana':'LA', 'Mo':'MO', 'Ohio':'OH',\
-                   'Puerto Rico':'PR', 'Tennessee':'TN'}
+    replaceDict = {'Illinois': 'IL', 'KA':'KS', 'Kansas':'KS', 'Louisiana':'LA',
+                   'Mo':'MO', 'Ohio':'OH', 'Puerto Rico':'PR', 'Tennessee':'TN'}
     shooterDf.replace(replaceDict, regex=True, inplace=True)
     
     # Saves State in Location Column
-    location = pd.DataFrame(shooterDf.Location.str.split(', ').tolist(),columns=['City', 'State'])
-    shooterDf['Location'] = location['State']
+    if saveCity is False:
+        location = pd.DataFrame(shooterDf.Location.str.split(', ').tolist(), \
+                                columns=['City', 'State'])
+        shooterDf['Location'] = location['State']
     
     # Calculates new Data Frame with summed up values for each state
     sumStateDf = shooterDf.groupby(['Location']).sum()
@@ -49,7 +52,7 @@ def loadGun():
             state from http://www.census.gov/popest/data/datasets.html.
     From:   Main Function
     
-    Input:  (Not explicitly) CSV File for 2014 in a directory specified below
+    Input:  (Not explicitly) CSV File for 2014 in a directory specified below.
     Output: A dict with {stateSymbol: <population>} 
 -----------------------------------------------------------------------------"""
 def loadPop():
