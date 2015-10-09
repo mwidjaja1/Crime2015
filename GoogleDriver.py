@@ -37,7 +37,7 @@ plot = GMapPlot(x_range=x_range, y_range=y_range, map_options=map_options, \
                 plot_width=1100, plot_height=650, title="United States")
 
 # Loads DataFrame from DownloadGoogle with City, Shootings, Lat, & Long.
-inFile = '/Users/Matthew/Github/Crime2015/MyData/ShootingData.csv'
+inFile = '/Users/Matthew/Github/Crime2015/MyData/ShootingData2.csv'
 inData = pd.read_csv(inFile, index_col='City')
 
 # Set Color Options

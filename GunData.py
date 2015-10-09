@@ -97,3 +97,22 @@ def loadPop():
 
     return populationDict
 
+
+""" loadBorder -----------------------------------------------------------------
+    Goal:   Loads the XML file with state boundaries and parses it into a dict
+            of {state:{lat:<lat>, lng:<long>}}
+    From:   Main Function
+    
+    Input:  (Not explicitly) XML File for state boundary coordinates in a dir
+            specified below.
+    Output: A dict with {state:{lat:<lat>, lng:<long>}}
+-----------------------------------------------------------------------------"""
+def loadBorder():
+    # Set Input Paths & Dataframe
+    inDir = '/Users/Matthew/Github/Crime2015/MyData/'
+    populationDf = pd.DataFrame()
+
+    # Concats the XML Dataframe into one DF
+    for xmlFile in glob.glob(inDir + '*.xml'):
+        xmlDF = pd.read_csv(csvFile, sep=',', header=0)
+        populationDf = populationDf.append(csvDF)
