@@ -1,5 +1,6 @@
 import glob
 import pandas as pd
+import xml.etree.ElementTree as et
 
 """ loadGun --------------------------------------------------------------------
     Goal:   Loads the CSV Files to get how many people were shot or injured
@@ -108,11 +109,26 @@ def loadPop():
     Output: A dict with {state:{lat:<lat>, lng:<long>}}
 -----------------------------------------------------------------------------"""
 def loadBorder():
-    # Set Input Paths & Dataframe
+    # Set Input Paths & Dictionary
     inDir = '/Users/Matthew/Github/Crime2015/MyData/'
-    populationDf = pd.DataFrame()
+    outDict = {}
 
-    # Concats the XML Dataframe into one DF
-    for xmlFile in glob.glob(inDir + '*.xml'):
-        xmlDF = pd.read_csv(csvFile, sep=',', header=0)
-        populationDf = populationDf.append(csvDF)
+    # Finds Root of XML file
+    tree = et.parse(glob.glob(inDir + '*.xml')[0])
+    root = tree.getroot()
+    
+    # Finds each State
+    for state in root.findall('state'):
+        name = state.attrib['name']
+        lat = []
+        lng = []
+        
+        # Finds the coordinates for each state
+        for point in state.iter('point'):
+            lat.append(point.attrib['lat'])
+            lng.append(point.attrib['lng'])
+        
+        # Adds entry for the state to the dictionary
+        outDict[name] = {'lat':lat, 'lng':lng}
+    
+    return outDict

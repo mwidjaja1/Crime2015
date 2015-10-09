@@ -8,7 +8,7 @@ Created on Sun Oct  4 20:51:35 2015
 from __future__ import print_function
 
 # Imports Google Maps stuff
-from bokeh.models.glyphs import Circle
+from bokeh.models.glyphs import Circle, Patch
 from bokeh.models import (
     GMapPlot, Range1d, ColumnDataSource,
     PanTool, WheelZoomTool, BoxSelectTool,
@@ -23,7 +23,6 @@ import pandas as pd
 # Imports other inhouse functions
 import GunData as gdt
 import LawData as ldt
-import PlotData as pdt
 
 x_range = Range1d()
 y_range = Range1d()
@@ -40,6 +39,7 @@ plot = GMapPlot(x_range=x_range, y_range=y_range, map_options=map_options, \
 inFile = '/Users/Matthew/Github/Crime2015/MyData/ShootingData2.csv'
 inData = pd.read_csv(inFile, index_col='City')
 
+""" main: Creates plot for shootings per county -----------------------------"""
 # Set Color Options
 attkColors = {5:'#CCE0FF', 10:'#99C2FF', 15:'#66A3FF', 20:'#3385FF', \
               25:'#0066FF', 30:'#0052CC', 40:'#003D99', 50:'#002966', \
@@ -48,7 +48,7 @@ clrs = []
 
 # Gets Coordinates & Color for each City
 for location in inData.index:
-    shootings = inData.loc[location, 'Shootings']
+    shootings = inData.loc[location, 'Shooting']
     color = '#CCE0FF'
     for maximum in sorted(attkColors):
         if shootings <= maximum:
@@ -70,13 +70,25 @@ source = ColumnDataSource(
 circle = Circle(x="lon", y="lat", size=15, fill_color="clr", line_color="black")
 plot.add_glyph(source, circle)
 
+
+""" main: Creates plot for shootings per county -----------------------------"""
+# Gets State Coordinates
+stateBorder = gdt.loadBorder()
+lats = [stateBorder[item]['lat'] for item in stateBorder]
+lngs = [stateBorder[item]['lng'] for item in stateBorder]
+
+# Sets Data for Shots 
+source = ColumnDataSource(
+    data=dict(
+        lat=lats,
+        lon=lngs,
+        clr='#CCE0FF'
+    )
+)
+
 # Create Tools
-pan = PanTool()
-wheel_zoom = WheelZoomTool()
-box_select = BoxSelectTool()
-plot.add_tools(pan, wheel_zoom, box_select)
-overlay = BoxSelectionOverlay(tool=box_select)
-plot.add_layout(overlay)
+patch = Patch(x="lat", y="lon", fill_alpha=0.5, fill_color="clr", line_width=2)
+plot.add_glyph(source, patch)
 
 # Saves Plot
 save(plot)
