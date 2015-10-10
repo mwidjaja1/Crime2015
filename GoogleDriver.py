@@ -37,7 +37,7 @@ def plotLaw(sourceLaw, sourceSh, title):
     y_range = Range1d()
     map_options = GMapOptions(lat=39.50, lng=-98.35, map_type="roadmap", zoom=4)
     plot = GMapPlot(x_range=x_range, y_range=y_range, map_options=map_options, \
-                plot_width=1100, plot_height=650, title=title)
+                plot_width=800, plot_height=600, title=title)
     
     # Sets Law Shading Data for each State 
     patch = Patches(xs="lng", ys="lat", fill_alpha=0.5, fill_color="clr")
@@ -62,7 +62,7 @@ def plotLaw(sourceLaw, sourceSh, title):
 
 """ main: Sets colors for the quantity of shootings per county --------------"""
 # Creates Output File
-output_file("maps.html", title="Number of People Shot")
+output_file("RawPopulation.html", title="Raw Population Shootings")
 plots = []
 
 # Loads DataFrame from DownloadGoogle with City, Shootings, Lat, & Long.
