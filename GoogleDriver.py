@@ -8,15 +8,14 @@ Created on Sun Oct  4 20:51:35 2015
 from __future__ import print_function
 
 # Imports Bokeh
+from bokeh.embed import autoload_static, components, notebook_div
 from bokeh.io import vplot
 from bokeh.models.glyphs import Circle, Patches
 from bokeh.models import (GMapPlot, Range1d, ColumnDataSource, PanTool, \
                           WheelZoomTool, BoxSelectTool, BoxSelectionOverlay, \
                           ResetTool, GMapOptions)
 from bokeh.plotting import output_file, save
-
-# Imports Other Libraries
-import pandas as pd
+from bokeh.resources import CDN
 
 # Imports other inhouse functions
 import GunData as gdt
@@ -60,7 +59,8 @@ def plotLaw(sourceLaw, sourceSh, title):
     return plot
 
 
-""" main: Sets colors for the quantity of shootings per county --------------"""
+""" main: Sets colors for the quantity of Raw shootings per county ----------"""
+"""
 # Creates Output File
 output_file("RawPopulation.html", title="Raw Population Shootings")
 plots = []
@@ -76,7 +76,7 @@ shQty = shQty.groupby(['Cty']).sum()
 attkColors = {5:'#CCE0FF', 10:'#99C2FF', 20:'#66A3FF', 30:'#3385FF', \
               40:'#0066FF', 50:'#0052CC', 60:'#003D99', 70:'#002966', \
               85:'#001433', 100:'#000A1A', 300:'#000000'}
-shClrs = []
+clrs = []
 
 # Loops between county to set colors
 for location in shQty.index:
@@ -84,13 +84,56 @@ for location in shQty.index:
     color = '#CCE0FF'
     for maximum in sorted(attkColors):
         if shootings <= maximum:
-            shClrs.append(color)
+            clrs.append(color)
             break
         else:
             color = attkColors[maximum]
 
 # Zips Data for Shootings per County 
-sourceSh = ColumnDataSource(data=dict(lat=shQty.Lat, lng=shQty.Lng, clr=shClrs))
+sourceRaw = ColumnDataSource(data=dict(lat=shQty.Lat, lng=shQty.Lng, clr=clrs))
+"""
+
+
+""" main: Sets colors for the quantity of ratio shootings per State ---------"""
+# Creates Output File
+output_file("RatioPopulation.html", title="Ratio Population Shootings")
+plots = []
+
+# Loads Injuries & Shootings per State
+stateInjuries, stateShootings = gdt.loadGun(False)
+
+# Loads State Midpoint Coordinates
+midpoint = ldt.loadMid()
+lats = []
+lngs = []
+
+# Set Color Options
+attkColors = {2:'#CCE0FF', 4:'#99C2FF', 8:'#66A3FF', 12:'#3385FF', \
+              16:'#0066FF', 20:'#0052CC', 30:'#003D99', 40:'#002966', \
+              50:'#001433', 75:'#000A1A', 100:'#000000'}
+clrs = []
+
+# Loops between county to set colors
+for location in stateShootings.keys():
+    # Calculates Colors
+    shootings = stateShootings[location]/3.21  #321000000 Population
+    color = '#CCE0FF'
+    for maximum in sorted(attkColors):
+        if shootings <= maximum:
+            break
+        else:
+            color = attkColors[maximum]
+    
+    # Determines Midpoint
+    try:
+        lats.append(midpoint[location]['y'])
+        lngs.append(midpoint[location]['x'])
+        clrs.append(color)
+    except:
+        print(location)
+
+# Zips Data for Shootings per County 
+sourceRaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=clrs))
 
 
 """ main: Downloads all Laws & Coordinate Data ------------------------------"""
@@ -110,44 +153,46 @@ laws = laws.drop('DC')
 # Plots CarryHG Laws
 lawClrs = laws['CarryHG'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-CarryHG = plotLaw(sourceLaw, sourceSh, 'Carry Handgun Laws vs. Shootings')
+CarryHG = plotLaw(sourceLaw, sourceRaw, 'Carry Handgun Laws vs. Shootings')
 
 # Plots CarryLG Laws
 lawClrs = laws['CarryLG'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-CarryLG = plotLaw(sourceLaw, sourceSh, 'Carry Longgun Laws vs. Shootings')
+CarryLG = plotLaw(sourceLaw, sourceRaw, 'Carry Longgun Laws vs. Shootings')
 
 # Plots PurchaseHG Laws
 lawClrs = laws['PurchaseHG'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-PurchaseHG = plotLaw(sourceLaw, sourceSh, 'Purchase Handgun Laws vs. Shootings')
+PurchaseHG = plotLaw(sourceLaw, sourceRaw, 'Purchase Handgun Laws vs. Shootings')
 
 # Plots PurchaseLG Laws
 lawClrs = laws['PurchaseLG'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-PurchaseLG = plotLaw(sourceLaw, sourceSh, 'Purchase Longgun Laws vs. Shootings')
+PurchaseLG = plotLaw(sourceLaw, sourceRaw, 'Purchase Longgun Laws vs. Shootings')
 
 # Plots ShootFirst Laws
 lawClrs = laws['ShootFirst'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-ShootFirst = plotLaw(sourceLaw, sourceSh, 'Shoot First Laws vs. Shootings')
+ShootFirst = plotLaw(sourceLaw, sourceRaw, 'Shoot First Laws vs. Shootings')
 
 # Plots GunShow Laws
 lawClrs = laws['GunShow'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-GunShow = plotLaw(sourceLaw, sourceSh, 'Gun Show Laws vs. Shootings')
+GunShow = plotLaw(sourceLaw, sourceRaw, 'Gun Show Laws vs. Shootings')
 
 # Plots Safety Laws
 lawClrs = laws['Safety'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-Safety = plotLaw(sourceLaw, sourceSh, 'Safety Laws vs. Shootings')
+Safety = plotLaw(sourceLaw, sourceRaw, 'Safety Laws vs. Shootings')
 
 # Plots Restrict Laws
 lawClrs = laws['Restrict'].tolist()
 sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
-Restrict = plotLaw(sourceLaw, sourceSh, 'Gun Restriction Laws vs. Shootings')
+Restrict = plotLaw(sourceLaw, sourceRaw, 'Gun Restriction Laws vs. Shootings')
 
 # Saves Plot
 listPlots = vplot(CarryHG, CarryLG, PurchaseHG, PurchaseLG, ShootFirst, GunShow,
                   Safety, Restrict)
 save(listPlots)
+
+div = notebook_div(Restrict)

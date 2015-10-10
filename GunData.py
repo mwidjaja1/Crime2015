@@ -26,7 +26,8 @@ def loadGun(saveCity):
     
     # Replace States in list
     replaceDict = {'Illinois': 'IL', 'KA':'KS', 'Kansas':'KS', 'Louisiana':'LA',
-                   'Mo':'MO', 'Ohio':'OH', 'Puerto Rico':'PR', 'Tennessee':'TN'}
+                   'Mo':'MO', 'Ohio':'OH', 'Puerto Rico':'PR', 'Tennessee':'TN',
+                   'Il':'IL', 'D.C':'DC', 'Ma':'MA'}
     shooterDf.replace(replaceDict, regex=True, inplace=True)
     
     # Saves State in Location Column
@@ -43,7 +44,7 @@ def loadGun(saveCity):
     sumStateDict = sumStateDf.to_dict()
     sumStateDict = sumStateDict['All']
 
-    # Creates second dictioanry for how many shootings were done per state
+    # Creates second dictionary for how many shootings were done per state
     allStateDict = shooterDf.Location.value_counts().to_dict()
 
     return sumStateDict, allStateDict
