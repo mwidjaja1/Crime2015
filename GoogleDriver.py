@@ -151,43 +151,43 @@ laws = laws.drop('DC')
 
 """ main: Plots for each type of law ----------------------------------------"""
 # Plots CarryHG Laws
-lawClrs = laws['CarryHG'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+CarryHGLaw = laws['CarryHG'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=CarryHGLaw))
 CarryHG = plotLaw(sourceLaw, sourceRaw, 'Carry Handgun Laws vs. Shootings')
 
 # Plots CarryLG Laws
-lawClrs = laws['CarryLG'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+CarryLGLaw = laws['CarryLG'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=CarryLGLaw))
 CarryLG = plotLaw(sourceLaw, sourceRaw, 'Carry Longgun Laws vs. Shootings')
 
 # Plots PurchaseHG Laws
-lawClrs = laws['PurchaseHG'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+PurchaseHGLaw = laws['PurchaseHG'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=PurchaseHGLaw))
 PurchaseHG = plotLaw(sourceLaw, sourceRaw, 'Purchase Handgun Laws vs. Shootings')
 
 # Plots PurchaseLG Laws
-lawClrs = laws['PurchaseLG'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+PurchaseLGLaw = laws['PurchaseLG'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=PurchaseLGLaw))
 PurchaseLG = plotLaw(sourceLaw, sourceRaw, 'Purchase Longgun Laws vs. Shootings')
 
 # Plots ShootFirst Laws
-lawClrs = laws['ShootFirst'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+ShootFirstLaw = laws['ShootFirst'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=ShootFirstLaw))
 ShootFirst = plotLaw(sourceLaw, sourceRaw, 'Shoot First Laws vs. Shootings')
 
 # Plots GunShow Laws
-lawClrs = laws['GunShow'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+GunShowLaw = laws['GunShow'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=GunShowLaw))
 GunShow = plotLaw(sourceLaw, sourceRaw, 'Gun Show Laws vs. Shootings')
 
 # Plots Safety Laws
-lawClrs = laws['Safety'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+SafetyLaw = laws['Safety'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=SafetyLaw))
 Safety = plotLaw(sourceLaw, sourceRaw, 'Safety Laws vs. Shootings')
 
 # Plots Restrict Laws
-lawClrs = laws['Restrict'].tolist()
-sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=lawClrs))
+RestrictLaw = laws['Restrict'].tolist()
+sourceLaw = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=RestrictLaw))
 Restrict = plotLaw(sourceLaw, sourceRaw, 'Gun Restriction Laws vs. Shootings')
 
 # Saves Plot
