@@ -37,6 +37,7 @@ plot = GMapPlot(x_range=x_range, y_range=y_range, map_options=map_options, \
 """ main: Downloads all Laws & Coordinate Data ------------------------------"""
 # Gets State Coordinates
 stateBorder = gdt.loadBorder()
+state = [item for item in sorted(stateBorder)]
 lats = [stateBorder[item]['lat'] for item in sorted(stateBorder)]
 lngs = [stateBorder[item]['lng'] for item in sorted(stateBorder)]
 
@@ -46,10 +47,11 @@ laws = laws.sort_index()
 laws = laws.drop('DC')
 
 # Sets Color List
+st = laws.index.tolist()
 clrs = laws['CarryHG'].tolist()
 
 # Zips Coordinates & Colors together
-data = zip(lats, lngs, clrs)
+data = zip(state, st, lats, lngs, clrs)
 
 # Sets Data for each State 
 #for st in data:
