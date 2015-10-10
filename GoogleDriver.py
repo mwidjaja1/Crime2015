@@ -8,11 +8,10 @@ Created on Sun Oct  4 20:51:35 2015
 from __future__ import print_function
 
 # Imports Google Maps stuff
-from bokeh.models.glyphs import Circle, Patch
-from bokeh.models import (
-    GMapPlot, Range1d, ColumnDataSource,
-    PanTool, WheelZoomTool, BoxSelectTool,
-    BoxSelectionOverlay, GMapOptions)
+from bokeh.models.glyphs import Circle, Patches
+from bokeh.models import (GMapPlot, Range1d, ColumnDataSource, PanTool, \
+                          WheelZoomTool, BoxSelectTool, BoxSelectionOverlay, \
+                          ResetTool, GMapOptions)
 
 # Imports Bokeh Libraries
 from bokeh.plotting import output_file, save
@@ -33,6 +32,30 @@ y_range = Range1d()
 map_options = GMapOptions(lat=39.50, lng=-98.35, map_type="roadmap", zoom=4)
 plot = GMapPlot(x_range=x_range, y_range=y_range, map_options=map_options, \
                 plot_width=1100, plot_height=650, title="United States")
+
+
+""" main: Downloads all Laws & Coordinate Data ------------------------------"""
+# Gets State Coordinates
+stateBorder = gdt.loadBorder()
+lats = [stateBorder[item]['lat'] for item in sorted(stateBorder)]
+lngs = [stateBorder[item]['lng'] for item in sorted(stateBorder)]
+
+# Downloads Legal Data
+laws = ldt.loadLaw()
+laws = laws.sort_index()
+laws = laws.drop('DC')
+
+# Sets Color List
+clrs = laws['CarryHG'].tolist()
+
+# Zips Coordinates & Colors together
+data = zip(lats, lngs, clrs)
+
+# Sets Data for each State 
+#for st in data:
+source = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=clrs))
+patch = Patches(xs="lng", ys="lat", fill_alpha=0.5, fill_color="clr")
+plot.add_glyph(source, patch)
 
 
 """ main: Creates plot for shootings per county -----------------------------"""
@@ -68,34 +91,13 @@ circle = Circle(x="lng", y="lat", size=15, fill_color="clr", line_color="black")
 plot.add_glyph(source, circle)
 
 
-""" main: Creates plot for shootings per county -----------------------------"""
-# Gets State Coordinates
-stateBorder = gdt.loadBorder()
-lats = [stateBorder[item]['lat'] for item in stateBorder]
-lngs = [stateBorder[item]['lng'] for item in stateBorder]
-
-# Sets Color List
-clrs = []
-
-# Sets Law/County for each County
-for county in stateBorder:
-    ldt.
-clrs = ['#CCE0FF' for item in stateBorder]
-
-# Sets Data for each County 
-source = ColumnDataSource(data=dict(lat=lats, lng=lngs, clr=clrs))
-
-# Creates Patches on Plot
-patch = Patch(x="lng", y="lat", fill_alpha=0.5, fill_color="clr", line_width=2)
-plot.add_glyph(source, patch)
-
-
 """ main: Renders & Saves Plot ----------------------------------------------"""
 # Create Tools
 pan = PanTool()
 wheel_zoom = WheelZoomTool()
 box_select = BoxSelectTool()
-plot.add_tools(pan, wheel_zoom, box_select)
+reset = ResetTool()
+plot.add_tools(pan, wheel_zoom, box_select, reset)
 overlay = BoxSelectionOverlay(tool=box_select)
 plot.add_layout(overlay)
 
